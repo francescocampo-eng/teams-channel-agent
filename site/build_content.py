@@ -39,6 +39,7 @@ OPPS_META = [
         "displayName": "STAR HOTELS",
         "client": "Star Hotels",
         "macroAmbito": "PoC flow INLAY + Assessment enterprise Tech & Business",
+        "summary": "PoC di un flow INLAY su una componente ancora da scegliere col cliente, più un assessment enterprise combinato tecnico/business con l'Assessment Estimator.",
         "status": "iniziale",
         "statusLabel": "Fase iniziale",
         "fileCount": 1,
@@ -48,6 +49,7 @@ OPPS_META = [
         "displayName": "MILANO RISTORAZIONE",
         "client": "Milano Ristorazione (via Adesso.it)",
         "macroAmbito": "Portale ticketing MVP + integrazione Dynamics CRM",
+        "summary": "Portale di ticketing MVP per famiglie, scuole e operatori, con propagazione del profilo utente a Dynamics CRM; delivery ENG in partnership con Adesso.it.",
         "status": "avanzata",
         "statusLabel": "Preparazione meeting tecnico",
         "fileCount": 4,
@@ -57,6 +59,7 @@ OPPS_META = [
         "displayName": "ARPAV - Integrazione Google Calendar",
         "client": "ARPAV",
         "macroAmbito": "Integrazione calendari esterni (Prisma/SINAP → Google Calendar)",
+        "summary": "Pubblicazione unidirezionale degli eventi da Prisma verso Google Calendar, per ridurre la duplicazione di inserimento e migliorare la visibilità per gli enti.",
         "status": "analisi",
         "statusLabel": "Analisi/review in corso",
         "fileCount": 3,
@@ -66,11 +69,19 @@ OPPS_META = [
         "displayName": "RCS - Rizzoli Corriere Della Sera",
         "client": "RCS",
         "macroAmbito": "Non ancora definito",
+        "summary": "Cartella dell'opportunità ancora vuota: nessun materiale caricato nel canale, perimetro e richiesta cliente non ricostruibili al momento.",
         "status": "vuota",
         "statusLabel": "Nessuna informazione disponibile",
         "fileCount": 0,
     },
 ]
+
+SLUGS = {
+    "presales-star-hotels": "star-hotels",
+    "presales-miri": "milano-ristorazione",
+    "presales-arpav": "arpav",
+    "presales-rcs": "rcs",
+}
 
 opportunities = []
 all_updated = []
@@ -78,7 +89,7 @@ for meta in OPPS_META:
     fname = FILES[meta["uniqueName"]]
     updated = mtime_iso(fname)
     all_updated.append(updated)
-    opportunities.append({**meta, "updatedAt": updated, "content": read(fname)})
+    opportunities.append({**meta, "slug": SLUGS[meta["uniqueName"]], "updatedAt": updated, "content": read(fname)})
 
 overview_updated = mtime_iso(FILES["overview"])
 all_updated.append(overview_updated)

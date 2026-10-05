@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>RCS - Rizzoli Corriere Della Sera — PreSales Opportunity — ENG</title>
+<meta name="description" content="Dettaglio opportunità presales RCS - Rizzoli Corriere Della Sera, mantenuto dall'agente teams-channel-agent su DocMind.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<header class="nav solid" id="siteNav">
+  <div class="wrap">
+    <a href="../index.html#top" class="brand">
+      <span class="brand-mark">PS</span>
+      <span class="brand-text"><b>PreSales Opportunity</b><span>ENG &middot; teams-channel-agent</span></span>
+    </a>
+    <nav class="links">
+      <a href="../index.html#come-funziona">Come funziona</a>
+      <a href="../index.html#panoramica">Panoramica</a>
+      <a href="../index.html#opportunita">Opportunità</a>
+      <a href="../index.html#opportunita" class="nav-cta">&larr; Tutte le opportunità</a>
+    </nav>
+  </div>
+</header>
+
+<section class="detail-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="../index.html#opportunita">Opportunità</a> <span>/</span> <span>RCS - Rizzoli Corriere Della Sera</span></div>
+    <span class="opp-status" style="--accent:#5F7290">Nessuna info</span>
+    <h1>RCS - Rizzoli Corriere Della Sera</h1>
+    <div class="opp-client">RCS</div>
+    <div class="detail-meta">
+      <span><b>Macro ambito:</b> Non ancora definito</span>
+      <span><b>File sorgente:</b> 0</span>
+      <span><b>Aggiornato:</b> 5 ott 2026 · 15:22 UTC</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap detail-layout">
+    <aside class="detail-toc">
+      <span class="detail-toc-label">In questa pagina</span>
+      <a href="#perimetro-e-scopo" class="">Perimetro e scopo</a>
+<a href="#richiesta-cliente" class="">Richiesta cliente</a>
+<a href="#stato" class="">Stato</a>
+<a href="#idee-proposte-dallagente" class="">Idee proposte dall'agente</a>
+    </aside>
+    <div class="detail-content">
+      <div class="prose">
+        <h1>Presales — Dettaglio Opportunità: RCS - Rizzoli Corriere Della Sera</h1>
+<blockquote class="src-note">
+<p>Fonte dati: file locale canale Teams (OneDrive sync). Stato al momento del rilevamento (scan automatico <code>scan-opportunities</code>): cartella dell'opportunità presente ma <strong>completamente vuota</strong>, nessun file disponibile.</p>
+</blockquote>
+<h2 id="perimetro-e-scopo">Perimetro e scopo</h2>
+<p>Non determinabile al momento: non è presente alcun materiale (documenti, email, note) nella cartella del canale dedicata a questa opportunità.</p>
+<h2 id="richiesta-cliente">Richiesta cliente</h2>
+<p>Non disponibile. Non risultano file, note o riferimenti che permettano di ricostruire la richiesta del cliente RCS.</p>
+<h2 id="stato">Stato</h2>
+<p><strong>Fase:</strong> nessuna informazione. La sottocartella "RCS - Rizzoli Corriere Della Sera" esiste nel canale Teams ma non contiene ancora file. Questo documento verrà aggiornato automaticamente non appena lo scan rileverà nuovi file nella cartella.</p>
+<h2 id="idee-proposte-dallagente">Idee proposte dall'agente</h2>
+<blockquote class="src-note">
+<p>Contenuto generato da questo agente, da validare.</p>
+</blockquote>
+<ol>
+<li><strong>Nessuna proposta di merito è possibile in assenza di materiale.</strong> Azione consigliata: verificare con il team se esistono materiali non ancora caricati nel canale, oppure se l'opportunità è ancora in fase di qualifica iniziale.</li>
+<li>Mantenere questo documento come placeholder e lasciare che il meccanismo di scan/diff lo segnali per aggiornamento alla prima comparsa di file nella cartella.</li>
+</ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><strong>PreSales Opportunity</strong> — generata da <code>teams-channel-agent</code>, dati da DocMind (progetto PreSales).</div>
+    <div>Ultima rigenerazione pagina: 5 ott 2026 · 15:32 UTC</div>
+  </div>
+</footer>
+
+<script>
+const progress = document.getElementById('progress');
+function onScroll(){
+  const h = document.documentElement;
+  const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  progress.style.width = scrolled + '%';
+}
+document.addEventListener('scroll', onScroll, {passive:true});
+onScroll();
+
+// evidenzia la voce di TOC attiva durante lo scroll
+const headings = Array.from(document.querySelectorAll('.detail-content [id]'));
+const tocLinks = Array.from(document.querySelectorAll('.detail-toc a'));
+if(headings.length && tocLinks.length){
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      const link = document.querySelector('.detail-toc a[href="#' + e.target.id + '"]');
+      if(link){ link.classList.toggle('active', e.isIntersecting); }
+    });
+  }, {rootMargin:'-20% 0px -70% 0px'});
+  headings.forEach(h=>io.observe(h));
+}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click', e=>{
+    const id = a.getAttribute('href').slice(1);
+    const target = document.getElementById(id);
+    if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+  });
+});
+</script>
+</body>
+</html>

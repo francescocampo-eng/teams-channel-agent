@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>ARPAV - Integrazione Google Calendar — PreSales Opportunity — ENG</title>
+<meta name="description" content="Dettaglio opportunità presales ARPAV - Integrazione Google Calendar, mantenuto dall'agente teams-channel-agent su DocMind.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<header class="nav solid" id="siteNav">
+  <div class="wrap">
+    <a href="../index.html#top" class="brand">
+      <span class="brand-mark">PS</span>
+      <span class="brand-text"><b>PreSales Opportunity</b><span>ENG &middot; teams-channel-agent</span></span>
+    </a>
+    <nav class="links">
+      <a href="../index.html#come-funziona">Come funziona</a>
+      <a href="../index.html#panoramica">Panoramica</a>
+      <a href="../index.html#opportunita">Opportunità</a>
+      <a href="../index.html#opportunita" class="nav-cta">&larr; Tutte le opportunità</a>
+    </nav>
+  </div>
+</header>
+
+<section class="detail-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="../index.html#opportunita">Opportunità</a> <span>/</span> <span>ARPAV - Integrazione Google Calendar</span></div>
+    <span class="opp-status" style="--accent:#39A7FF">Analisi in corso</span>
+    <h1>ARPAV - Integrazione Google Calendar</h1>
+    <div class="opp-client">ARPAV</div>
+    <div class="detail-meta">
+      <span><b>Macro ambito:</b> Integrazione calendari esterni (Prisma/SINAP → Google Calendar)</span>
+      <span><b>File sorgente:</b> 3</span>
+      <span><b>Aggiornato:</b> 5 ott 2026 · 15:22 UTC</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap detail-layout">
+    <aside class="detail-toc">
+      <span class="detail-toc-label">In questa pagina</span>
+      <a href="#perimetro-e-scopo" class="">Perimetro e scopo</a>
+<a href="#richiesta-cliente" class="">Richiesta cliente</a>
+<a href="#stato" class="">Stato</a>
+<a href="#idee-proposte-dallagente" class="">Idee proposte dall'agente</a>
+    </aside>
+    <div class="detail-content">
+      <div class="prose">
+        <h1>Presales — Dettaglio Opportunità: ARPAV - Integrazione Google Calendar</h1>
+<blockquote class="src-note">
+<p>Fonte dati: file locale canale Teams (OneDrive sync). Documento sorgente originale: <code>Review-opportunita-calendari-esterni-SINAP.md</code> (review del 2 ottobre 2026, basata sul corpo testuale di una email del 1 ottobre 2026; un PDF Outlook allegato non è stato estratto). Sezione "Idee proposte dall'agente" in fondo: contenuto generato, non proveniente dal cliente.</p>
+</blockquote>
+<h2 id="perimetro-e-scopo">Perimetro e scopo</h2>
+<p>Pubblicazione <strong>unidirezionale</strong> degli eventi da <strong>Prisma verso Google Calendar</strong>: le modifiche originate in Prisma possono essere pubblicate su Google; le modifiche fatte direttamente in Google non vengono riportate in Prisma. Fuori perimetro in questa fase: integrazione Outlook/Microsoft, sincronizzazione Google → Prisma o bidirezionale.</p>
+<p>Punto aperto esplicito nella review sorgente: verificare se <strong>Prisma coincide con il sistema SINAP</strong> citato nelle fonti storiche (documento tecnico del 13 agosto 2024, prototipo Spring Boot, conversazioni Teams di agosto 2024) — non ancora confermato.</p>
+<h2 id="richiesta-cliente">Richiesta cliente</h2>
+<p>ARPAV ha richiesto un'analisi sulla connessione a calendari esterni (Google Calendar e/o Outlook) a partire dal sistema SINAP/Prisma (riferimento email: "[ARPAV][CheckAP_exSINAP] - analisi su connessione a calendari esterni"). L'email rimanda a un documento tecnico (<code>ANNOTAZIONI_SP_SINAP_CALENDAR.docx</code>, non disponibile localmente) e a conversazioni Teams non recuperate.</p>
+<p><strong>Necessità possibile:</strong> pubblicare su Google Calendar gli eventi gestiti in Prisma, riducendo la duplicazione di inserimento e migliorando la visibilità degli eventi per utenti/enti.</p>
+<p><strong>Valore potenziale:</strong> minori disallineamenti, adozione più semplice se il calendario SINAP è già parte dei flussi di lavoro degli enti.</p>
+<p><strong>Non ancora dimostrato:</strong> utenti coinvolti e frequenza del problema reale; eventi/campi da pubblicare; calendario Google destinatario (personale vs condiviso per ente); account/tenant disponibili; costi e oneri amministrativi Google Workspace; benefici misurabili rispetto a una semplice esportazione <code>.ics</code>.</p>
+<h2 id="stato">Stato</h2>
+<p><strong>Fase:</strong> analisi/review documentale, nessun pilot tecnico avviato. Nessuna data di workshop ancora fissata.</p>
+<p><strong>Raccomandazione della review esistente:</strong> non avviare la pubblicazione in produzione. Prima completare le attività P0, chiarire il rapporto Prisma/SINAP e fissare modello di calendario e regole di propagazione; poi validare un pilot nel solo verso Prisma → Google.</p>
+<p><strong>Attività P0 aperte (da fonte originale):</strong>
+1. Recuperare il DOCX tecnico e i thread Teams citati; raccogliere codice/prototipo e decisioni successive al 2024.
+2. Verificare se Prisma è lo stesso sistema SINAP delle fonti 2024; identificare applicazione, owner e ambiente attuali.
+3. Confermare il problema utente con 2-3 esempi reali di eventi Prisma da pubblicare su Google Calendar.
+4. Definire il target Google del pilot (calendario personale collegato vs calendario condiviso dell'ente) e l'ente/account di test.</p>
+<p><strong>Punti di attenzione principali:</strong> identità e autorizzazioni (OAuth utente vs accesso applicativo), dati e privacy (quali campi evento escono da SINAP), coerenza (sistema autorevole, conflitti, fusi orari), continuità operativa (retry, limiti API, monitoraggio), gestione credenziali, costi/governance Google Workspace, validazione tecnica attuale.</p>
+<p><strong>Incontri già proposti nella review:</strong> (1) Allineamento funzionale e priorità — 45 min; (2) Fattibilità tecnica e identità — 60 min; (3) Privacy, costi e decisione di avvio — 45 min.</p>
+<h2 id="idee-proposte-dallagente">Idee proposte dall'agente</h2>
+<blockquote class="src-note">
+<p>Contenuto generato da questo agente (non dal cliente), da validare con il team prima di proporlo ad ARPAV. Approccio ispirato ai planner ENGenius (ANALYSIS, DESIGN) e alla disciplina di <code>impact</code> per la parte di assessment tecnico.</p>
+</blockquote>
+<ol>
+<li><strong>Formalizzare il discovery come mini-assessment strutturato</strong> prima del workshop 1: usare un formato BR/FR leggero (planner ENGenius <code>ANALYSIS</code>).</li>
+<li><strong>ADR esplicito su Prisma vs SINAP</strong>: produrre un Architecture Decision Record — è bloccante e a basso costo da chiarire subito.</li>
+<li><strong>Pilot "calendario condiviso per ente" come opzione di default</strong>: riduce la superficie di consenso/revoca OAuth individuale.</li>
+<li><strong>Contratto di integrazione versionato</strong> (schema esplicito tipo OpenAPI/JSON Schema), così prova tecnica e pilot condividono la stessa definizione.</li>
+<li><strong>Criterio di uscita misurabile per il pilot</strong>: 2-3 metriche semplici per decidere il go/no-go.</li>
+<li><strong>Non sottovalutare l'alternativa <code>.ics</code></strong>: presentarla come opzione "a costo quasi zero" nel workshop 3.</li>
+</ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><strong>PreSales Opportunity</strong> — generata da <code>teams-channel-agent</code>, dati da DocMind (progetto PreSales).</div>
+    <div>Ultima rigenerazione pagina: 5 ott 2026 · 15:32 UTC</div>
+  </div>
+</footer>
+
+<script>
+const progress = document.getElementById('progress');
+function onScroll(){
+  const h = document.documentElement;
+  const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  progress.style.width = scrolled + '%';
+}
+document.addEventListener('scroll', onScroll, {passive:true});
+onScroll();
+
+// evidenzia la voce di TOC attiva durante lo scroll
+const headings = Array.from(document.querySelectorAll('.detail-content [id]'));
+const tocLinks = Array.from(document.querySelectorAll('.detail-toc a'));
+if(headings.length && tocLinks.length){
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      const link = document.querySelector('.detail-toc a[href="#' + e.target.id + '"]');
+      if(link){ link.classList.toggle('active', e.isIntersecting); }
+    });
+  }, {rootMargin:'-20% 0px -70% 0px'});
+  headings.forEach(h=>io.observe(h));
+}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click', e=>{
+    const id = a.getAttribute('href').slice(1);
+    const target = document.getElementById(id);
+    if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+  });
+});
+</script>
+</body>
+</html>

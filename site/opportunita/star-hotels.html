@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>STAR HOTELS — PreSales Opportunity — ENG</title>
+<meta name="description" content="Dettaglio opportunità presales STAR HOTELS, mantenuto dall'agente teams-channel-agent su DocMind.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<header class="nav solid" id="siteNav">
+  <div class="wrap">
+    <a href="../index.html#top" class="brand">
+      <span class="brand-mark">PS</span>
+      <span class="brand-text"><b>PreSales Opportunity</b><span>ENG &middot; teams-channel-agent</span></span>
+    </a>
+    <nav class="links">
+      <a href="../index.html#come-funziona">Come funziona</a>
+      <a href="../index.html#panoramica">Panoramica</a>
+      <a href="../index.html#opportunita">Opportunità</a>
+      <a href="../index.html#opportunita" class="nav-cta">&larr; Tutte le opportunità</a>
+    </nav>
+  </div>
+</header>
+
+<section class="detail-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="../index.html#opportunita">Opportunità</a> <span>/</span> <span>STAR HOTELS</span></div>
+    <span class="opp-status" style="--accent:#F5A524">Fase iniziale</span>
+    <h1>STAR HOTELS</h1>
+    <div class="opp-client">Star Hotels</div>
+    <div class="detail-meta">
+      <span><b>Macro ambito:</b> PoC flow INLAY + Assessment enterprise Tech & Business</span>
+      <span><b>File sorgente:</b> 1</span>
+      <span><b>Aggiornato:</b> 5 ott 2026 · 15:22 UTC</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap detail-layout">
+    <aside class="detail-toc">
+      <span class="detail-toc-label">In questa pagina</span>
+      <a href="#contesto-cosè-inlay-verificato-dalla-documentazione-ufficiale" class="">Contesto: cos'è INLAY (verificato dalla documentazione ufficiale)</a>
+<a href="#perimetro-e-scopo" class="">Perimetro e scopo</a>
+<a href="#richiesta-cliente" class="">Richiesta cliente</a>
+<a href="#stato" class="">Stato</a>
+<a href="#idee-proposte-dallagente" class="">Idee proposte dall'agente</a>
+    </aside>
+    <div class="detail-content">
+      <div class="prose">
+        <h1>Presales — Dettaglio Opportunità: STAR HOTELS</h1>
+<blockquote class="src-note">
+<p>Fonte dati: file locale canale Teams (OneDrive sync). Documento sorgente: <code>summary.txt</code> (nota sintetica, 6 righe). Sezione "Idee proposte dall'agente" in fondo: contenuto generato, non proveniente dal cliente.</p>
+</blockquote>
+<h2 id="contesto-cosè-inlay-verificato-dalla-documentazione-ufficiale">Contesto: cos'è INLAY (verificato dalla documentazione ufficiale)</h2>
+<blockquote class="src-note">
+<p>Fonte: repository <code>DevExpPlatform/project-am-inlay-docs-portal</code> (documentazione INLAY Studio, letta direttamente dal repo scaricato dall'utente in locale). Aggiorna e sostituisce la nota precedente, basata solo su quanto riferito a voce.</p>
+</blockquote>
+<p><strong>INLAY Studio</strong> è la suite applicativa locale dell'azienda (container podman) che include <strong>Atlas</strong>: il motore di knowledge base che <strong>sostituisce DocMind</strong>. Atlas espone un MCP server HTTP (default porta <strong>8010</strong>, endpoint <code>http://localhost:8010/mcp</code>, nessuna autenticazione richiesta) con <strong>22 tool</strong>, da registrare a parte su GitHub Copilot CLI (config separata da quella usata da Inlay Studio stesso).</p>
+<p><strong>Stato in questo ambiente: INLAY Studio/Atlas NON è installato</strong> (verificato: <code>podman</code> non presente, porta 8010 non raggiungibile). Il PoC "flow INLAY" per Star Hotels richiede quindi, come prerequisito tecnico, prima l'installazione dello stack Inlay Studio.</p>
+<p><strong>Migrazione progetti DocMind → Atlas</strong> (per riferimento futuro): si applica solo a progetti la cui documentazione vive in un <strong>repository git</strong> con cartella <code>.docmind/</code> — si rinomina in <code>.atlas/</code>, si fa push, poi si importa il repo in Inlay Studio ("Importa da GitHub"). I progetti DocMind di questo agente (<code>AgenteTeams</code>, <code>PreSales</code>) <strong>non</strong> seguono questo schema, quindi questa procedura non si applica direttamente a loro.</p>
+<blockquote class="src-note">
+<p>⚠️ <strong>Vincolo non negoziabile sul modello di delivery INLAY</strong>: INLAY gira <strong>esclusivamente in casa nostra</strong> (infrastruttura ENG). Non va <strong>mai installato, distribuito o consegnato al cliente</strong>, in nessuna forma. Il PoC per il cliente consiste nel <strong>prendere un asset del cliente</strong> e <strong>lavorarlo internamente con INLAY</strong>, per poi mostrare al cliente solo il <strong>risultato prodotto</strong> e le <strong>capability dimostrate</strong>. Il messaggio di vendita non è "vi diamo l'AI" (ce l'hanno già tutti), ma "abbiamo sviluppato una suite proprietaria che ci dà vantaggi di velocità/qualità e vi dà garanzie — di sicurezza, tracciabilità, controllo — che un tool generico non offre". Questo vincolo si applica a ogni opportunità in cui si proponga INLAY.</p>
+</blockquote>
+<h2 id="perimetro-e-scopo">Perimetro e scopo</h2>
+<p>Due filoni distinti, entrambi in fase iniziale:
+1. <strong>PoC di un flow INLAY</strong> su una componente scelta dal cliente (perimetro tecnico ancora da definire).
+2. <strong>Assessment enterprise Tech &amp; Business</strong>: valutazione combinata tecnica e di business su un perimetro che deve ancora essere definito dal cliente, da realizzare con il supporto dell'<strong>Assessment Estimator</strong>.</p>
+<p>Perimetro non ancora delimitato in dettaglio: non è noto quale componente verrà scelta per il PoC INLAY, né quale sarà l'ampiezza esatta dell'assessment enterprise.</p>
+<h2 id="richiesta-cliente">Richiesta cliente</h2>
+<p>A seguito di una presentazione della metodologia/piattaforma <strong>INLAY</strong>, Star Hotels ha chiesto:
+- una <strong>proof of concept</strong> del flow INLAY applicato a una componente a propria scelta;
+- una <strong>proposta con stima</strong> per un assessment enterprise che copra sia l'ambito tecnico sia quello di business, utilizzando l'Assessment Estimator come strumento di stima.</p>
+<p>Obiettivo dichiarato dal cliente: ottenere entro <strong>fine 2026</strong> una timeline e un budget di programma, a valle di un journey che illustri l'approccio e porti alla commissione formale dell'assessment.</p>
+<h2 id="stato">Stato</h2>
+<p><strong>Fase:</strong> molto iniziale. Nessun documento di scoping ricevuto dal cliente oltre alla nota sintetica; il perimetro dell'assessment è esplicitamente "da definire dal cliente". Non risultano ancora fissati workshop, date o referenti. <strong>Inlay Studio/Atlas non è ancora installato in questo ambiente</strong>: è un prerequisito da chiudere prima del PoC.</p>
+<p><strong>Rischio principale:</strong> procedere a stimare/proporre senza un perimetro condiviso rischia di produrre una proposta generica poco vincolante per il cliente.</p>
+<h2 id="idee-proposte-dallagente">Idee proposte dall'agente</h2>
+<blockquote class="src-note">
+<p>Contenuto generato da questo agente (non dal cliente), da validare prima di presentarlo a Star Hotels.</p>
+</blockquote>
+<ol>
+<li><strong>Chiedere al cliente un asset reale su cui lavorare</strong> da usare come caso concreto per il PoC: l'asset viene acquisito e lavorato <strong>internamente</strong> con INLAY, senza mai installare o esporre INLAY al cliente.</li>
+<li><strong>Presentare il PoC come demo dell'output, non del tool</strong>: mostrare solo il "prima/dopo" sull'asset del cliente e i vantaggi misurabili, senza accesso diretto del cliente a INLAY.</li>
+<li><strong>Usare la skill <code>impact</code></strong> sul sistema enterprise esistente del cliente, se accessibile, per produrre internamente un'anteprima dell'approccio di assessment tecnico — dà credibilità all'Assessment Estimator.</li>
+<li><strong>Costruire la proposta con la skill <code>proposal-writing</code></strong>, profilo settoriale hospitality.</li>
+<li><strong>Proporre un workshop di scoping preliminare (1 incontro, 2h)</strong> dedicato a delimitare il perimetro dell'assessment enterprise e a raccogliere l'asset per il PoC.</li>
+<li><strong>Collegare esplicitamente PoC INLAY e Assessment enterprise</strong> in un'unica narrativa ("capitolo 0").</li>
+<li><strong>Definire già ora 2-3 opzioni di pacchetto</strong> per l'assessment (ambito ridotto/medio/ampio).</li>
+<li><strong>Installare Inlay Studio/Atlas come primo passo tecnico abilitante</strong> (solo in ambiente ENG, mai lato cliente).</li>
+</ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><strong>PreSales Opportunity</strong> — generata da <code>teams-channel-agent</code>, dati da DocMind (progetto PreSales).</div>
+    <div>Ultima rigenerazione pagina: 5 ott 2026 · 15:32 UTC</div>
+  </div>
+</footer>
+
+<script>
+const progress = document.getElementById('progress');
+function onScroll(){
+  const h = document.documentElement;
+  const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  progress.style.width = scrolled + '%';
+}
+document.addEventListener('scroll', onScroll, {passive:true});
+onScroll();
+
+// evidenzia la voce di TOC attiva durante lo scroll
+const headings = Array.from(document.querySelectorAll('.detail-content [id]'));
+const tocLinks = Array.from(document.querySelectorAll('.detail-toc a'));
+if(headings.length && tocLinks.length){
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      const link = document.querySelector('.detail-toc a[href="#' + e.target.id + '"]');
+      if(link){ link.classList.toggle('active', e.isIntersecting); }
+    });
+  }, {rootMargin:'-20% 0px -70% 0px'});
+  headings.forEach(h=>io.observe(h));
+}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click', e=>{
+    const id = a.getAttribute('href').slice(1);
+    const target = document.getElementById(id);
+    if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+  });
+});
+</script>
+</body>
+</html>

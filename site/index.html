@@ -8,183 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap">
-<style>
-:root{
-  --bg:#050B16; --bg2:#081222; --bg3:#0C1830;
-  --card:#0F1F38; --card2:#122744;
-  --line:#1C2E4B; --line2:#2A4068;
-  --ink:#FFFFFF; --ink2:#CBD8EE; --ink3:#8EA1C4;
-  --blue:#0073CE; --blue2:#39A7FF; --blue-deep:#003170;
-  --on-accent:#03101F;
-  --radius:20px;
-  --maxw:1180px;
-  --shadow: 0 20px 60px -20px rgba(0,30,70,.55);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;background:var(--bg)}
-body{
-  margin:0;background:
-    radial-gradient(70vmax 50vmax at 85% -10%, color-mix(in srgb, var(--blue) 12%, transparent), transparent 60%),
-    radial-gradient(60vmax 40vmax at 0% 10%, color-mix(in srgb, var(--blue-deep) 24%, transparent), transparent 55%),
-    var(--bg);
-  color:var(--ink);
-  font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;
-}
-.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:24px}
-a{color:var(--blue2)}
-.mono{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
-h1,h2,h3{font-family:"Fraunces",Georgia,serif;letter-spacing:-.01em;margin:0}
-::selection{background:color-mix(in srgb, var(--blue) 50%, transparent);color:#fff}
-
-/* progress bar */
-.progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--blue-deep),var(--blue2));z-index:1000;transition:width .08s linear}
-
-/* header */
-header.nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:16px 0;transition:background .3s,border-color .3s,backdrop-filter .3s}
-header.nav .wrap{display:flex;align-items:center;justify-content:space-between}
-header.nav.solid{background:color-mix(in srgb, var(--bg2) 88%, transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:700}
-.brand-mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--blue2),var(--blue-deep));display:grid;place-items:center;font-family:"Fraunces",serif;font-weight:700;color:#fff;font-size:15px}
-.brand-text{display:flex;flex-direction:column;line-height:1.1}
-.brand-text b{font-size:14px;letter-spacing:.02em}
-.brand-text span{font-size:10px;color:var(--ink3);letter-spacing:.14em;text-transform:uppercase}
-nav.links{display:flex;gap:28px;align-items:center}
-nav.links a{color:var(--ink2);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
-nav.links a:hover{color:var(--ink)}
-.nav-cta{background:var(--blue);color:#fff !important;padding:9px 16px;border-radius:980px;font-size:13px !important;font-weight:600 !important;transition:transform .2s, box-shadow .2s}
-.nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 24px -8px color-mix(in srgb, var(--blue) 70%, transparent)}
-
-/* hero */
-.hero{position:relative;padding:176px 0 100px;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:48px;align-items:start}
-.hero-visual{position:relative;min-height:380px;border:1px solid var(--line2);border-radius:26px;background:linear-gradient(165deg, var(--card2), var(--bg2));overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:26px}
-.hero-visual::before{content:"";position:absolute;inset:-30%;background:conic-gradient(from 180deg at 50% 50%, transparent, color-mix(in srgb,var(--blue2) 30%, transparent), transparent 60%);animation:spin 14s linear infinite;opacity:.5}
-@keyframes spin{to{transform:rotate(360deg)}}
-.hero-visual .hv-row{position:relative;display:flex;justify-content:space-between;align-items:center;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink3)}
-.hero-visual .hv-pyramid{position:relative;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px 0}
-.hv-tier{display:flex;align-items:center;justify-content:center;border:1px solid var(--line2);border-radius:12px;background:color-mix(in srgb, var(--bg2) 70%, transparent);color:var(--ink2);font-size:12.5px;font-weight:600;padding:12px 0}
-.hv-tier.t1{width:60%}
-.hv-tier.t2{width:84%}
-.hv-tier.t3{width:100%}
-.hv-tier b{color:var(--blue2);font-family:"IBM Plex Mono",monospace;margin-right:6px}
-.kicker{display:inline-flex;align-items:center;gap:8px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--blue2);background:color-mix(in srgb, var(--blue) 12%, transparent);border:1px solid color-mix(in srgb, var(--blue) 35%, transparent);padding:7px 14px;border-radius:980px;margin-bottom:26px;flex-wrap:wrap}
-.kicker .dot-live{width:7px;height:7px;border-radius:50%;background:#4ADE80;box-shadow:0 0 0 3px color-mix(in srgb,#4ADE80 30%, transparent);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-h1.title{font-size:clamp(44px,6.4vw,84px);font-weight:700;line-height:.98;letter-spacing:-.03em}
-h1.title .accent{background:linear-gradient(100deg,var(--blue2),#9fd8ff 60%, var(--blue2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p.lead{margin-top:26px;max-width:92%;font-size:19px;color:var(--ink2);line-height:1.65}
-.hero-cta-row{margin-top:40px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
-.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#061020;font-weight:700;padding:14px 24px;border-radius:980px;text-decoration:none;font-size:14.5px;transition:transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 34px -10px rgba(255,255,255,.25)}
-.btn-primary svg{transition:transform .25s}
-.btn-primary:hover svg{transform:translate(3px,-3px)}
-.scroll-hint{display:inline-flex;align-items:center;gap:8px;color:var(--ink3);font-size:13px;text-decoration:none}
-.scroll-hint .circle{width:34px;height:34px;border-radius:50%;border:1px solid var(--line2);display:grid;place-items:center;animation:bob 2.4s ease-in-out infinite}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
-
-/* stats */
-.stats{margin-top:78px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}
-.stat{background:color-mix(in srgb, var(--bg2) 92%, transparent);padding:26px 22px}
-.stat .num{font-family:"Fraunces",serif;font-size:38px;font-weight:600;color:var(--ink)}
-.stat .lab{margin-top:6px;font-size:12.5px;color:var(--ink3);letter-spacing:.03em}
-
-/* section generic */
-section{padding:108px 0;position:relative}
-.section-label{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue2);margin-bottom:14px;display:block}
-.section-head{max-width:800px;margin-bottom:56px}
-.section-head h2{font-size:clamp(28px,4.2vw,44px);font-weight:600;line-height:1.08}
-.section-head p{margin-top:16px;color:var(--ink2);font-size:16.5px;line-height:1.65}
-
-/* how it works */
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
-.step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;transition:transform .3s, border-color .3s, box-shadow .3s}
-.step:hover{transform:translateY(-4px);border-color:var(--line2);box-shadow:var(--shadow)}
-.step .n{font-family:"Fraunces",serif;font-size:28px;color:var(--blue2);font-weight:600}
-.step h4{margin-top:14px;font-size:16.5px;color:var(--ink);font-family:"Inter";font-weight:700}
-.step p{margin-top:8px;color:var(--ink2);font-size:14.5px;line-height:1.6}
-
-.legend{margin-top:48px;display:flex;flex-wrap:wrap;gap:10px}
-.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:980px;border:1px solid var(--line2);font-size:12.5px;color:var(--ink2);background:color-mix(in srgb, var(--bg2) 60%, transparent)}
-.badge i{width:8px;height:8px;border-radius:50%;display:inline-block}
-.badge.teams i{background:#6264A7}
-.badge.docmind i{background:var(--blue2)}
-.badge.locale i{background:#F5A524}
-.badge.istruzione i{background:#C084FC}
-.badge.agente i{background:#4ADE80}
-
-/* pyramid / overview */
-.pyramid-tag{display:flex;align-items:center;gap:10px;margin-bottom:18px}
-.overview-card{background:linear-gradient(180deg, var(--card2), var(--card));border:1px solid var(--line2);border-radius:28px;padding:40px 40px 10px;box-shadow:var(--shadow);position:relative;overflow:hidden}
-.overview-card::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 15% 0%, color-mix(in srgb,var(--blue) 18%, transparent), transparent 70%);pointer-events:none}
-.overview-head{position:relative;display:flex;flex-wrap:wrap;align-items:baseline;gap:14px;margin-bottom:8px}
-.overview-kicker{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue2)}
-.overview-head h3{font-size:22px;font-weight:600}
-.overview-updated{margin-left:auto;font-size:12px;color:var(--ink3)}
-
-.pyramid-connector{display:flex;justify-content:center;margin:36px 0;}
-.pyramid-connector svg{opacity:.5}
-
-/* opportunity cards (pyramid base) */
-.opp-grid{display:grid;gap:16px}
-.opp-card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:border-color .3s, box-shadow .3s}
-.opp-card:hover{border-color:var(--line2)}
-.opp-card.is-open{box-shadow:var(--shadow);border-color:color-mix(in srgb, var(--accent) 40%, var(--line2))}
-.opp-head{all:unset;cursor:pointer;display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:18px;padding:22px 24px;width:100%}
-.opp-num{font-family:"IBM Plex Mono",monospace;color:var(--ink3);font-size:13px}
-.opp-head-main{display:flex;flex-direction:column;gap:4px;min-width:0}
-.opp-title{font-weight:700;font-size:17px;color:var(--ink);font-family:"Inter"}
-.opp-client{font-size:13px;color:var(--ink3)}
-.opp-status{font-size:11.5px;font-weight:600;color:var(--accent);background:color-mix(in srgb, var(--accent) 16%, transparent);border:1px solid color-mix(in srgb, var(--accent) 45%, transparent);padding:5px 12px;border-radius:980px;white-space:nowrap}
-.opp-chevron{width:11px;height:11px;border-right:2px solid var(--ink3);border-bottom:2px solid var(--ink3);transform:rotate(-45deg);transition:transform .3s}
-.opp-card.is-open .opp-chevron{transform:rotate(45deg)}
-.opp-sub{padding:0 24px 18px 66px;display:flex;gap:10px;flex-wrap:wrap;font-size:12.5px;color:var(--ink3)}
-.opp-sub .dot{opacity:.5}
-.opp-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s ease}
-.opp-body--open{grid-template-rows:1fr}
-.opp-card.is-open .opp-body{grid-template-rows:1fr}
-.opp-body-inner{overflow:hidden;padding:0 24px}
-.opp-card.is-open .opp-body-inner{padding:6px 24px 30px}
-.opp-body--open .opp-body-inner{overflow:visible;padding:6px 40px 10px}
-
-/* prose (rendered markdown) */
-.prose{color:var(--ink2);font-size:15px;line-height:1.75}
-.prose h1{display:none}
-.prose h2{font-family:"Inter";font-size:16.5px;font-weight:700;color:var(--ink);margin:26px 0 10px;padding-top:16px;border-top:1px solid var(--line)}
-.prose h2:first-child{border-top:none;padding-top:0;margin-top:4px}
-.prose h3{font-family:"Inter";font-size:14.5px;font-weight:700;color:var(--ink);margin:18px 0 8px}
-.prose p{margin:10px 0}
-.prose ul,.prose ol{padding-left:20px;margin:10px 0}
-.prose li{margin:6px 0}
-.prose strong{color:var(--ink)}
-.prose code{background:var(--bg3);padding:2px 6px;border-radius:5px;font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--blue2)}
-.prose table{border-collapse:collapse;width:100%;margin:14px 0;font-size:13.5px}
-.prose th,.prose td{border:1px solid var(--line);padding:8px 10px;text-align:left}
-.prose th{color:var(--ink);background:var(--bg3)}
-.prose blockquote.src-note{margin:14px 0;padding:12px 16px;border-left:3px solid var(--blue2);background:color-mix(in srgb, var(--blue) 8%, transparent);border-radius:0 10px 10px 0;font-size:13.5px;color:var(--ink2)}
-.prose blockquote.src-note p{margin:0}
-
-/* reveal animation */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)}
-.reveal.in{opacity:1;transform:translateY(0)}
-
-/* footer */
-footer{padding:70px 0 50px;border-top:1px solid var(--line)}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;color:var(--ink3);font-size:13px}
-footer strong{color:var(--ink2)}
-
-@media (max-width:860px){
-  .hero-grid{grid-template-columns:1fr}
-  .hero-visual{display:none}
-}
-@media (max-width:720px){
-  .opp-head{grid-template-columns:auto 1fr;grid-template-areas:"num main" "status status";row-gap:10px}
-  .opp-status{grid-area:status;justify-self:start}
-  .opp-chevron{display:none}
-  .opp-sub{padding-left:24px}
-  .overview-card{padding:28px 22px 10px}
-}
-</style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 
@@ -209,7 +33,7 @@ footer strong{color:var(--ink2)}
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-text">
-        <span class="kicker"><span class="dot-live"></span> Dati agg. 5 ott 2026 · 15:22 UTC &middot; Sito agg. 5 ott 2026 · 15:25 UTC</span>
+        <span class="kicker"><span class="dot-live"></span> Dati agg. 5 ott 2026 · 15:22 UTC &middot; Sito agg. 5 ott 2026 · 15:32 UTC</span>
         <h1 class="title">PreSales<br><span class="accent">Opportunity.</span></h1>
         <p class="lead">La mappa viva di tutte le opportunità presales in corso: rilevate, analizzate e tenute aggiornate da un agente che lavora direttamente sulla documentazione del canale, e scrive la sintesi su DocMind.</p>
         <div class="hero-cta-row">
@@ -284,9 +108,9 @@ footer strong{color:var(--ink2)}
 <p>Fonte: file locale (cartella canale Teams sincronizzata via OneDrive, letta da WSL). Rilevamento e mappatura a cura dell'agente <code>teams-channel-agent</code>, tramite scan automatico delle cartelle (<code>scan-opportunities</code>).
 Data rilevamento: 2026-10-05. Snapshot di riferimento: prima baseline (tutte le opportunità e i file risultano "nuovi" al primo scan).</p>
 </blockquote>
-<h2>Come viene mantenuta aggiornata questa panoramica</h2>
+<h2 id="come-viene-mantenuta-aggiornata-questa-panoramica">Come viene mantenuta aggiornata questa panoramica</h2>
 <p>L'agente esegue uno scan delle sottocartelle del canale (una per opportunità/commessa) e confronta lo stato attuale con l'ultimo snapshot salvato (<code>output/opportunities_snapshot.json</code>). Ad ogni esecuzione rileva: nuove opportunità comparse, opportunità non più presenti, file nuovi, file modificati, file rimossi. Questo documento e i documenti di dettaglio per singola opportunità vengono aggiornati di conseguenza. Fonte di ogni informazione sempre dichiarata (file locale / OneDrive sync, oppure idea proposta dall'agente).</p>
-<h2>Mappa dei filoni</h2>
+<h2 id="mappa-dei-filoni">Mappa dei filoni</h2>
 <table>
 <thead>
 <tr>
@@ -333,16 +157,16 @@ Data rilevamento: 2026-10-05. Snapshot di riferimento: prima baseline (tutte le 
 </tr>
 </tbody>
 </table>
-<h2>Sintesi per filone</h2>
-<h3>ARPAV — Integrazione Google Calendar</h3>
+<h2 id="sintesi-per-filone">Sintesi per filone</h2>
+<h3 id="arpav-integrazione-google-calendar">ARPAV — Integrazione Google Calendar</h3>
 <p>Necessità potenziale: pubblicare su Google Calendar gli eventi gestiti in Prisma (ex SINAP), riducendo doppio inserimento. Perimetro assunto: unidirezionale Prisma → Google, nessuna sincronizzazione inversa né integrazione Outlook/Microsoft in questa fase. Raccomandazione della review esistente: non avviare produzione finché non sono chiariti identità/autorizzazioni, dati trasferiti, modello di calendario (personale vs condiviso) e relazione Prisma/SINAP.</p>
-<h3>MILANO RISTORAZIONE</h3>
+<h3 id="milano-ristorazione">MILANO RISTORAZIONE</h3>
 <p>MVP di portale ticketing per famiglie, scuole e operatori, con propagazione profilo a Dynamics CRM. Collaborazione a tre: Milano Ristorazione (cliente), Adesso.it (relazione/coordinamento), ENG (architettura, integrazioni, delivery tecnico). WBS con 13 work package; stima ROM 506-911 gg-persona a seconda dello scenario (basso/base/alto), picco ~6,5 FTE a febbraio 2027. In preparazione un meeting tecnico con agenda, dependency matrix, NFR e vertical slice identity-to-CRM.</p>
-<h3>STAR HOTELS</h3>
+<h3 id="star-hotels">STAR HOTELS</h3>
 <p>A seguito di una presentazione INLAY, il cliente ha espresso due esigenze: (1) verificare un flow INLAY su una componente a sua scelta; (2) ricevere una proposta/stima di un assessment enterprise (tecnico + business) su un perimetro ancora da definire dal cliente, usando l'Assessment Estimator, con obiettivo di illustrare il journey, stimare l'assessment, farselo commissionare e produrre entro fine 2026 una timeline e un budget di programma.</p>
-<h3>RCS — Rizzoli Corriere Della Sera</h3>
+<h3 id="rcs-rizzoli-corriere-della-sera">RCS — Rizzoli Corriere Della Sera</h3>
 <p>Nessun file presente nella cartella del canale al momento del rilevamento. Il filone esiste come sottocartella ma non contiene ancora materiale. Da monitorare nei prossimi scan.</p>
-<h2>Prossimi passi proposti (agente)</h2>
+<h2 id="prossimi-passi-proposti-agente">Prossimi passi proposti (agente)</h2>
 <ul>
 <li>Approfondire RCS non appena compariranno file nel canale (lo scan li segnalerà automaticamente come "nuovi").</li>
 <li>Per ARPAV: supportare la preparazione dei workshop P0 (allineamento funzionale, fattibilità tecnica/identità, privacy/costi) già delineati nella review esistente.</li>
@@ -363,258 +187,109 @@ Data rilevamento: 2026-10-05. Snapshot di riferimento: prima baseline (tutte le 
     <span class="section-label">Dettaglio opportunità</span>
     <div class="section-head">
       <h2>Ogni opportunità, nel suo scatolone.</h2>
-      <p>Clicca su una card per aprirla: perimetro e scopo, richiesta cliente, stato attuale e idee proposte dall'agente (sempre segnalate come tali, da validare prima di presentarle al cliente).</p>
+      <p>Clicca su una card per girarla e vedere lo stato in breve. Da lì, apri il dettaglio completo: perimetro e scopo, richiesta cliente, stato attuale e idee proposte dall'agente (sempre segnalate come tali, da validare prima di presentarle al cliente).</p>
     </div>
     <div class="opp-grid">
       
-    <article class="opp-card reveal" style="--accent:#F5A524" data-opp="presales-star-hotels">
-      <button class="opp-head" type="button" aria-expanded="false">
-        <span class="opp-num">01</span>
-        <span class="opp-head-main">
-          <span class="opp-title">STAR HOTELS</span>
-          <span class="opp-client">Star Hotels</span>
-        </span>
-        <span class="opp-status" style="--accent:#F5A524">Fase iniziale</span>
-        <span class="opp-chevron" aria-hidden="true"></span>
-      </button>
-      <div class="opp-sub">
-        <span>PoC flow INLAY + Assessment enterprise Tech & Business</span>
-        <span class="dot">&middot;</span>
-        <span>1 file sorgente</span>
-        <span class="dot">&middot;</span>
-        <span>agg. 5 ott 2026 · 15:22 UTC</span>
-      </div>
-      <div class="opp-body">
-        <div class="opp-body-inner prose">
-          <h1>Presales — Dettaglio Opportunità: STAR HOTELS</h1>
-<blockquote class="src-note">
-<p>Fonte dati: file locale canale Teams (OneDrive sync). Documento sorgente: <code>summary.txt</code> (nota sintetica, 6 righe). Sezione "Idee proposte dall'agente" in fondo: contenuto generato, non proveniente dal cliente.</p>
-</blockquote>
-<h2>Contesto: cos'è INLAY (verificato dalla documentazione ufficiale)</h2>
-<blockquote class="src-note">
-<p>Fonte: repository <code>DevExpPlatform/project-am-inlay-docs-portal</code> (documentazione INLAY Studio, letta direttamente dal repo scaricato dall'utente in locale). Aggiorna e sostituisce la nota precedente, basata solo su quanto riferito a voce.</p>
-</blockquote>
-<p><strong>INLAY Studio</strong> è la suite applicativa locale dell'azienda (container podman) che include <strong>Atlas</strong>: il motore di knowledge base che <strong>sostituisce DocMind</strong>. Atlas espone un MCP server HTTP (default porta <strong>8010</strong>, endpoint <code>http://localhost:8010/mcp</code>, nessuna autenticazione richiesta) con <strong>22 tool</strong>, da registrare a parte su GitHub Copilot CLI (config separata da quella usata da Inlay Studio stesso).</p>
-<p><strong>Stato in questo ambiente: INLAY Studio/Atlas NON è installato</strong> (verificato: <code>podman</code> non presente, porta 8010 non raggiungibile). Il PoC "flow INLAY" per Star Hotels richiede quindi, come prerequisito tecnico, prima l'installazione dello stack Inlay Studio.</p>
-<p><strong>Migrazione progetti DocMind → Atlas</strong> (per riferimento futuro): si applica solo a progetti la cui documentazione vive in un <strong>repository git</strong> con cartella <code>.docmind/</code> — si rinomina in <code>.atlas/</code>, si fa push, poi si importa il repo in Inlay Studio ("Importa da GitHub"). I progetti DocMind di questo agente (<code>AgenteTeams</code>, <code>PreSales</code>) <strong>non</strong> seguono questo schema, quindi questa procedura non si applica direttamente a loro.</p>
-<blockquote class="src-note">
-<p>⚠️ <strong>Vincolo non negoziabile sul modello di delivery INLAY</strong>: INLAY gira <strong>esclusivamente in casa nostra</strong> (infrastruttura ENG). Non va <strong>mai installato, distribuito o consegnato al cliente</strong>, in nessuna forma. Il PoC per il cliente consiste nel <strong>prendere un asset del cliente</strong> e <strong>lavorarlo internamente con INLAY</strong>, per poi mostrare al cliente solo il <strong>risultato prodotto</strong> e le <strong>capability dimostrate</strong>. Il messaggio di vendita non è "vi diamo l'AI" (ce l'hanno già tutti), ma "abbiamo sviluppato una suite proprietaria che ci dà vantaggi di velocità/qualità e vi dà garanzie — di sicurezza, tracciabilità, controllo — che un tool generico non offre". Questo vincolo si applica a ogni opportunità in cui si proponga INLAY.</p>
-</blockquote>
-<h2>Perimetro e scopo</h2>
-<p>Due filoni distinti, entrambi in fase iniziale:
-1. <strong>PoC di un flow INLAY</strong> su una componente scelta dal cliente (perimetro tecnico ancora da definire).
-2. <strong>Assessment enterprise Tech &amp; Business</strong>: valutazione combinata tecnica e di business su un perimetro che deve ancora essere definito dal cliente, da realizzare con il supporto dell'<strong>Assessment Estimator</strong>.</p>
-<p>Perimetro non ancora delimitato in dettaglio: non è noto quale componente verrà scelta per il PoC INLAY, né quale sarà l'ampiezza esatta dell'assessment enterprise.</p>
-<h2>Richiesta cliente</h2>
-<p>A seguito di una presentazione della metodologia/piattaforma <strong>INLAY</strong>, Star Hotels ha chiesto:
-- una <strong>proof of concept</strong> del flow INLAY applicato a una componente a propria scelta;
-- una <strong>proposta con stima</strong> per un assessment enterprise che copra sia l'ambito tecnico sia quello di business, utilizzando l'Assessment Estimator come strumento di stima.</p>
-<p>Obiettivo dichiarato dal cliente: ottenere entro <strong>fine 2026</strong> una timeline e un budget di programma, a valle di un journey che illustri l'approccio e porti alla commissione formale dell'assessment.</p>
-<h2>Stato</h2>
-<p><strong>Fase:</strong> molto iniziale. Nessun documento di scoping ricevuto dal cliente oltre alla nota sintetica; il perimetro dell'assessment è esplicitamente "da definire dal cliente". Non risultano ancora fissati workshop, date o referenti. <strong>Inlay Studio/Atlas non è ancora installato in questo ambiente</strong>: è un prerequisito da chiudere prima del PoC.</p>
-<p><strong>Rischio principale:</strong> procedere a stimare/proporre senza un perimetro condiviso rischia di produrre una proposta generica poco vincolante per il cliente.</p>
-<h2>Idee proposte dall'agente</h2>
-<blockquote class="src-note">
-<p>Contenuto generato da questo agente (non dal cliente), da validare prima di presentarlo a Star Hotels.</p>
-</blockquote>
-<ol>
-<li><strong>Chiedere al cliente un asset reale su cui lavorare</strong> da usare come caso concreto per il PoC: l'asset viene acquisito e lavorato <strong>internamente</strong> con INLAY, senza mai installare o esporre INLAY al cliente.</li>
-<li><strong>Presentare il PoC come demo dell'output, non del tool</strong>: mostrare solo il "prima/dopo" sull'asset del cliente e i vantaggi misurabili, senza accesso diretto del cliente a INLAY.</li>
-<li><strong>Usare la skill <code>impact</code></strong> sul sistema enterprise esistente del cliente, se accessibile, per produrre internamente un'anteprima dell'approccio di assessment tecnico — dà credibilità all'Assessment Estimator.</li>
-<li><strong>Costruire la proposta con la skill <code>proposal-writing</code></strong>, profilo settoriale hospitality.</li>
-<li><strong>Proporre un workshop di scoping preliminare (1 incontro, 2h)</strong> dedicato a delimitare il perimetro dell'assessment enterprise e a raccogliere l'asset per il PoC.</li>
-<li><strong>Collegare esplicitamente PoC INLAY e Assessment enterprise</strong> in un'unica narrativa ("capitolo 0").</li>
-<li><strong>Definire già ora 2-3 opzioni di pacchetto</strong> per l'assessment (ambito ridotto/medio/ampio).</li>
-<li><strong>Installare Inlay Studio/Atlas come primo passo tecnico abilitante</strong> (solo in ambiente ENG, mai lato cliente).</li>
-</ol>
+    <div class="flip-card reveal" style="--accent:#F5A524" data-opp="presales-star-hotels">
+      <div class="flip-card-inner">
+        <div class="flip-face flip-face-front">
+          <span class="opp-num">01 / OPPORTUNITÀ</span>
+          <span class="opp-status" style="--accent:#F5A524">Fase iniziale</span>
+          <div class="opp-title">STAR HOTELS</div>
+          <div class="opp-client">Star Hotels</div>
+          <p class="opp-summary">PoC di un flow INLAY su una componente ancora da scegliere col cliente, più un assessment enterprise combinato tecnico/business con l'Assessment Estimator.</p>
+          <div class="flip-hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 7h16M4 12h16M4 17h10"/></svg> Clicca per girare la card</div>
+        </div>
+        <div class="flip-face flip-face-back">
+          <span class="opp-back-label">Richiesta cliente</span>
+          <p class="opp-back-text">A seguito di una presentazione della metodologia/piattaforma INLAY, Star Hotels ha chiesto: - una proof of concept del flow INLAY applicato a una componente a propria scelta; - una proposta…</p>
+          <div class="opp-meta-row">
+            <span><b>Macro ambito:</b> PoC flow INLAY + Assessment enterprise Tech & Business</span>
+            <span><b>File sorgente:</b> 1</span>
+            <span><b>Aggiornato:</b> 5 ott 2026 · 15:22 UTC</span>
+          </div>
+          <a class="opp-detail-link" href="opportunita/star-hotels.html">Apri dettaglio completo
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
         </div>
       </div>
-    </article>
+    </div>
 
-    <article class="opp-card reveal" style="--accent:#4ADE80" data-opp="presales-miri">
-      <button class="opp-head" type="button" aria-expanded="false">
-        <span class="opp-num">02</span>
-        <span class="opp-head-main">
-          <span class="opp-title">MILANO RISTORAZIONE</span>
-          <span class="opp-client">Milano Ristorazione (via Adesso.it)</span>
-        </span>
-        <span class="opp-status" style="--accent:#4ADE80">In preparazione</span>
-        <span class="opp-chevron" aria-hidden="true"></span>
-      </button>
-      <div class="opp-sub">
-        <span>Portale ticketing MVP + integrazione Dynamics CRM</span>
-        <span class="dot">&middot;</span>
-        <span>4 file sorgente</span>
-        <span class="dot">&middot;</span>
-        <span>agg. 5 ott 2026 · 15:22 UTC</span>
-      </div>
-      <div class="opp-body">
-        <div class="opp-body-inner prose">
-          <h1>Presales — Dettaglio Opportunità: MILANO RISTORAZIONE</h1>
-<blockquote class="src-note">
-<p>Fonte dati: file locale canale Teams (OneDrive sync). Documento sorgente principale: <code>TODO_Meeting_Tecnico_Adesso_MiRi.md</code> (checklist preparazione meeting tecnico con Adesso.it), più <code>Business_Case_MVP_Ticketing_MiRi.xlsx</code> e 2 PDF (analisi As-Is/To-Be, ticketing). Sezione "Idee proposte dall'agente" in fondo: contenuto generato, non proveniente dal cliente.</p>
-</blockquote>
-<h2>Perimetro e scopo</h2>
-<p><strong>MVP Ticketing</strong> per Milano Ristorazione, in collaborazione con il partner Adesso.it:
-- login/registrazione utenti;
-- lista e dettaglio ticket;
-- apertura e risposta ticket;
-- stato ticket;
-- propagazione del profilo utente a <strong>Dynamics CRM</strong>.</p>
-<p><strong>Esplicitamente escluso dal perimetro MVP:</strong> rette, iscrizioni, presenze, diete, pagamenti, CMS completo; migrazione/decommissioning non ancora definiti.</p>
-<h2>Richiesta cliente</h2>
-<p>Milano Ristorazione necessita di un portale di ticketing rivolto a famiglie, scuole e operatori, con integrazione dei profili utente nel CRM Dynamics esistente. Il progetto è condotto in un modello a tre attori: <strong>Milano Ristorazione</strong> (cliente, sponsor/owner di business e IT), <strong>Adesso.it</strong> (presidio relazione e coordinamento con il cliente), <strong>ENG</strong> (architettura, integrazioni, delivery tecnico). È in preparazione un <strong>meeting tecnico con Adesso.it</strong> per allineare perimetro MVP, domande tecniche, stima preliminare di effort e modello organizzativo.</p>
-<h2>Stato</h2>
-<p><strong>Fase:</strong> preparazione meeting tecnico (checklist non ancora completata). WBS e stima ROM già elaborate come baseline di lavoro, <strong>non ancora una stima contrattuale</strong>.</p>
-<p><strong>WBS e stima (13 work package MVP):</strong> baseline avvio ottobre 2026, go-live target <strong>giugno 2027</strong>.</p>
-<table>
-<thead>
-<tr>
-<th>Scenario</th>
-<th style="text-align: right;">Effort pre-riserva</th>
-<th style="text-align: right;">Effort con riserva 15%</th>
-<th style="text-align: right;">FTE medi su 9 mesi</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Basso</td>
-<td style="text-align: right;">~506 gg-persona</td>
-<td style="text-align: right;">~582 gg-persona</td>
-<td style="text-align: right;">~3,2</td>
-</tr>
-<tr>
-<td>Base</td>
-<td style="text-align: right;">633 gg-persona</td>
-<td style="text-align: right;">~728 gg-persona</td>
-<td style="text-align: right;">~4,0</td>
-</tr>
-<tr>
-<td>Alto</td>
-<td style="text-align: right;">~792 gg-persona</td>
-<td style="text-align: right;">~911 gg-persona</td>
-<td style="text-align: right;">~5,1</td>
-</tr>
-</tbody>
-</table>
-<p>Picco stimato: <strong>~6,5 FTE a febbraio 2027</strong> (riserva inclusa). Composizione principale: Portale/ticketing (115 gg), API Gateway/bus/listener CRM (96 gg), Identity/onboarding (58 gg), Governance/PMO (55 gg), Configurazione Dynamics (32 gg), Test integrati (64 gg), UAT/formazione (24 gg), Cutover/hypercare (21 gg), tra gli altri.</p>
-<p><strong>Assunzioni della stima:</strong> disponibilità tempestiva di ambienti/API/referenti cliente, nessuna migrazione dati, perimetro Dynamics limitato al flusso MVP. Ritardi su identity-to-CRM o dipendenze esterne possono spostare effort e calendario.</p>
-<p><strong>Dati ancora mancanti (da richiedere al cliente prima di una stima vincolante):</strong> utenti potenziali per categoria, volumi ticket attuali e stagionalità, picchi di accesso concorrenti, percentuale ticket con allegati, SLA attesi, sistemi sorgente/API/limiti (CRM, SPID/CIE, identità B2C, API Gateway), regole di identity matching, vincoli privacy/DPIA/accessibilità, data di scadenza licenze attuali.</p>
-<p><strong>Modello organizzativo proposto (da formalizzare in RACI):</strong> governance tripartita su 6 livelli (sponsor/priorità, steering, coordinamento quotidiano, architettura/integrazioni, prodotto/processi, esercizio), con ruoli e accountable distinti per Milano Ristorazione, Adesso.it, ENG.</p>
-<p><strong>Gate consigliato (da fonte originale):</strong> non impegnare prezzo e data di go-live come baseline vincolante finché non sono verificati volumi, requisiti operativi, identity-to-CRM, disponibilità integrazioni e opzione di proroga licenze.</p>
-<h2>Idee proposte dall'agente</h2>
-<blockquote class="src-note">
-<p>Contenuto generato da questo agente (non dal cliente/partner), da validare prima di presentarlo ad Adesso.it/Milano Ristorazione. Approccio ispirato ai planner ENGenius (ANALYSIS, FP_SIZING, WBS, ACTIVITY).</p>
-</blockquote>
-<ol>
-<li><strong>Raffinare la stima ROM con Function Point / SNAP sizing</strong>: la WBS attuale è per work package; affiancarla con un sizing a Function Point (planner ENGenius <code>FP_SIZING</code>, eventualmente supportato dal tool <code>mcp-fp-snap-server</code>) darebbe una seconda misura indipendente da confrontare con la stima a gg-persona.</li>
-<li><strong>Vertical slice identity-to-CRM come prova di fattibilità anticipata</strong>: proporla come primo "sprint 0" a pagamento separato per validare il collegamento più critico (identità → Dynamics) prima di impegnarsi sulla stima completa.</li>
-<li><strong>RACI formalizzata prima del meeting, non durante</strong>: portare in meeting una bozza di RACI già compilata invece di limitarsi a discuterne il modello.</li>
-<li><strong>Tre profili di volume (normale/picco/stress) come allegato tecnico separato</strong>: template già strutturato da far compilare a Milano Ristorazione nel workshop.</li>
-<li><strong>Dependency matrix con data di scadenza esplicita per ciascuna dipendenza</strong>: collegata visibilmente al gate "non impegnare prezzo/data".</li>
-<li><strong>Piano di escalation change request già abbozzato in fase di proposta</strong>: anticipare come verranno gestite le change request post-baseline, per evitare conflitti a metà progetto.</li>
-</ol>
+    <div class="flip-card reveal" style="--accent:#4ADE80" data-opp="presales-miri">
+      <div class="flip-card-inner">
+        <div class="flip-face flip-face-front">
+          <span class="opp-num">02 / OPPORTUNITÀ</span>
+          <span class="opp-status" style="--accent:#4ADE80">In preparazione</span>
+          <div class="opp-title">MILANO RISTORAZIONE</div>
+          <div class="opp-client">Milano Ristorazione (via Adesso.it)</div>
+          <p class="opp-summary">Portale di ticketing MVP per famiglie, scuole e operatori, con propagazione del profilo utente a Dynamics CRM; delivery ENG in partnership con Adesso.it.</p>
+          <div class="flip-hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 7h16M4 12h16M4 17h10"/></svg> Clicca per girare la card</div>
+        </div>
+        <div class="flip-face flip-face-back">
+          <span class="opp-back-label">Richiesta cliente</span>
+          <p class="opp-back-text">Milano Ristorazione necessita di un portale di ticketing rivolto a famiglie, scuole e operatori, con integrazione dei profili utente nel CRM Dynamics esistente. Il progetto è condotto in un…</p>
+          <div class="opp-meta-row">
+            <span><b>Macro ambito:</b> Portale ticketing MVP + integrazione Dynamics CRM</span>
+            <span><b>File sorgente:</b> 4</span>
+            <span><b>Aggiornato:</b> 5 ott 2026 · 15:22 UTC</span>
+          </div>
+          <a class="opp-detail-link" href="opportunita/milano-ristorazione.html">Apri dettaglio completo
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
         </div>
       </div>
-    </article>
+    </div>
 
-    <article class="opp-card reveal" style="--accent:#39A7FF" data-opp="presales-arpav">
-      <button class="opp-head" type="button" aria-expanded="false">
-        <span class="opp-num">03</span>
-        <span class="opp-head-main">
-          <span class="opp-title">ARPAV - Integrazione Google Calendar</span>
-          <span class="opp-client">ARPAV</span>
-        </span>
-        <span class="opp-status" style="--accent:#39A7FF">Analisi in corso</span>
-        <span class="opp-chevron" aria-hidden="true"></span>
-      </button>
-      <div class="opp-sub">
-        <span>Integrazione calendari esterni (Prisma/SINAP → Google Calendar)</span>
-        <span class="dot">&middot;</span>
-        <span>3 file sorgente</span>
-        <span class="dot">&middot;</span>
-        <span>agg. 5 ott 2026 · 15:22 UTC</span>
-      </div>
-      <div class="opp-body">
-        <div class="opp-body-inner prose">
-          <h1>Presales — Dettaglio Opportunità: ARPAV - Integrazione Google Calendar</h1>
-<blockquote class="src-note">
-<p>Fonte dati: file locale canale Teams (OneDrive sync). Documento sorgente originale: <code>Review-opportunita-calendari-esterni-SINAP.md</code> (review del 2 ottobre 2026, basata sul corpo testuale di una email del 1 ottobre 2026; un PDF Outlook allegato non è stato estratto). Sezione "Idee proposte dall'agente" in fondo: contenuto generato, non proveniente dal cliente.</p>
-</blockquote>
-<h2>Perimetro e scopo</h2>
-<p>Pubblicazione <strong>unidirezionale</strong> degli eventi da <strong>Prisma verso Google Calendar</strong>: le modifiche originate in Prisma possono essere pubblicate su Google; le modifiche fatte direttamente in Google non vengono riportate in Prisma. Fuori perimetro in questa fase: integrazione Outlook/Microsoft, sincronizzazione Google → Prisma o bidirezionale.</p>
-<p>Punto aperto esplicito nella review sorgente: verificare se <strong>Prisma coincide con il sistema SINAP</strong> citato nelle fonti storiche (documento tecnico del 13 agosto 2024, prototipo Spring Boot, conversazioni Teams di agosto 2024) — non ancora confermato.</p>
-<h2>Richiesta cliente</h2>
-<p>ARPAV ha richiesto un'analisi sulla connessione a calendari esterni (Google Calendar e/o Outlook) a partire dal sistema SINAP/Prisma (riferimento email: "[ARPAV][CheckAP_exSINAP] - analisi su connessione a calendari esterni"). L'email rimanda a un documento tecnico (<code>ANNOTAZIONI_SP_SINAP_CALENDAR.docx</code>, non disponibile localmente) e a conversazioni Teams non recuperate.</p>
-<p><strong>Necessità possibile:</strong> pubblicare su Google Calendar gli eventi gestiti in Prisma, riducendo la duplicazione di inserimento e migliorando la visibilità degli eventi per utenti/enti.</p>
-<p><strong>Valore potenziale:</strong> minori disallineamenti, adozione più semplice se il calendario SINAP è già parte dei flussi di lavoro degli enti.</p>
-<p><strong>Non ancora dimostrato:</strong> utenti coinvolti e frequenza del problema reale; eventi/campi da pubblicare; calendario Google destinatario (personale vs condiviso per ente); account/tenant disponibili; costi e oneri amministrativi Google Workspace; benefici misurabili rispetto a una semplice esportazione <code>.ics</code>.</p>
-<h2>Stato</h2>
-<p><strong>Fase:</strong> analisi/review documentale, nessun pilot tecnico avviato. Nessuna data di workshop ancora fissata.</p>
-<p><strong>Raccomandazione della review esistente:</strong> non avviare la pubblicazione in produzione. Prima completare le attività P0, chiarire il rapporto Prisma/SINAP e fissare modello di calendario e regole di propagazione; poi validare un pilot nel solo verso Prisma → Google.</p>
-<p><strong>Attività P0 aperte (da fonte originale):</strong>
-1. Recuperare il DOCX tecnico e i thread Teams citati; raccogliere codice/prototipo e decisioni successive al 2024.
-2. Verificare se Prisma è lo stesso sistema SINAP delle fonti 2024; identificare applicazione, owner e ambiente attuali.
-3. Confermare il problema utente con 2-3 esempi reali di eventi Prisma da pubblicare su Google Calendar.
-4. Definire il target Google del pilot (calendario personale collegato vs calendario condiviso dell'ente) e l'ente/account di test.</p>
-<p><strong>Punti di attenzione principali:</strong> identità e autorizzazioni (OAuth utente vs accesso applicativo), dati e privacy (quali campi evento escono da SINAP), coerenza (sistema autorevole, conflitti, fusi orari), continuità operativa (retry, limiti API, monitoraggio), gestione credenziali, costi/governance Google Workspace, validazione tecnica attuale.</p>
-<p><strong>Incontri già proposti nella review:</strong> (1) Allineamento funzionale e priorità — 45 min; (2) Fattibilità tecnica e identità — 60 min; (3) Privacy, costi e decisione di avvio — 45 min.</p>
-<h2>Idee proposte dall'agente</h2>
-<blockquote class="src-note">
-<p>Contenuto generato da questo agente (non dal cliente), da validare con il team prima di proporlo ad ARPAV. Approccio ispirato ai planner ENGenius (ANALYSIS, DESIGN) e alla disciplina di <code>impact</code> per la parte di assessment tecnico.</p>
-</blockquote>
-<ol>
-<li><strong>Formalizzare il discovery come mini-assessment strutturato</strong> prima del workshop 1: usare un formato BR/FR leggero (planner ENGenius <code>ANALYSIS</code>).</li>
-<li><strong>ADR esplicito su Prisma vs SINAP</strong>: produrre un Architecture Decision Record — è bloccante e a basso costo da chiarire subito.</li>
-<li><strong>Pilot "calendario condiviso per ente" come opzione di default</strong>: riduce la superficie di consenso/revoca OAuth individuale.</li>
-<li><strong>Contratto di integrazione versionato</strong> (schema esplicito tipo OpenAPI/JSON Schema), così prova tecnica e pilot condividono la stessa definizione.</li>
-<li><strong>Criterio di uscita misurabile per il pilot</strong>: 2-3 metriche semplici per decidere il go/no-go.</li>
-<li><strong>Non sottovalutare l'alternativa <code>.ics</code></strong>: presentarla come opzione "a costo quasi zero" nel workshop 3.</li>
-</ol>
+    <div class="flip-card reveal" style="--accent:#39A7FF" data-opp="presales-arpav">
+      <div class="flip-card-inner">
+        <div class="flip-face flip-face-front">
+          <span class="opp-num">03 / OPPORTUNITÀ</span>
+          <span class="opp-status" style="--accent:#39A7FF">Analisi in corso</span>
+          <div class="opp-title">ARPAV - Integrazione Google Calendar</div>
+          <div class="opp-client">ARPAV</div>
+          <p class="opp-summary">Pubblicazione unidirezionale degli eventi da Prisma verso Google Calendar, per ridurre la duplicazione di inserimento e migliorare la visibilità per gli enti.</p>
+          <div class="flip-hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 7h16M4 12h16M4 17h10"/></svg> Clicca per girare la card</div>
+        </div>
+        <div class="flip-face flip-face-back">
+          <span class="opp-back-label">Richiesta cliente</span>
+          <p class="opp-back-text">ARPAV ha richiesto un'analisi sulla connessione a calendari esterni (Google Calendar e/o Outlook) a partire dal sistema SINAP/Prisma (riferimento email: "[ARPAV][CheckAPexSINAP] - analisi…</p>
+          <div class="opp-meta-row">
+            <span><b>Macro ambito:</b> Integrazione calendari esterni (Prisma/SINAP → Google Calendar)</span>
+            <span><b>File sorgente:</b> 3</span>
+            <span><b>Aggiornato:</b> 5 ott 2026 · 15:22 UTC</span>
+          </div>
+          <a class="opp-detail-link" href="opportunita/arpav.html">Apri dettaglio completo
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
         </div>
       </div>
-    </article>
+    </div>
 
-    <article class="opp-card reveal" style="--accent:#5F7290" data-opp="presales-rcs">
-      <button class="opp-head" type="button" aria-expanded="false">
-        <span class="opp-num">04</span>
-        <span class="opp-head-main">
-          <span class="opp-title">RCS - Rizzoli Corriere Della Sera</span>
-          <span class="opp-client">RCS</span>
-        </span>
-        <span class="opp-status" style="--accent:#5F7290">Nessuna info</span>
-        <span class="opp-chevron" aria-hidden="true"></span>
-      </button>
-      <div class="opp-sub">
-        <span>Non ancora definito</span>
-        <span class="dot">&middot;</span>
-        <span>0 file sorgente</span>
-        <span class="dot">&middot;</span>
-        <span>agg. 5 ott 2026 · 15:22 UTC</span>
-      </div>
-      <div class="opp-body">
-        <div class="opp-body-inner prose">
-          <h1>Presales — Dettaglio Opportunità: RCS - Rizzoli Corriere Della Sera</h1>
-<blockquote class="src-note">
-<p>Fonte dati: file locale canale Teams (OneDrive sync). Stato al momento del rilevamento (scan automatico <code>scan-opportunities</code>): cartella dell'opportunità presente ma <strong>completamente vuota</strong>, nessun file disponibile.</p>
-</blockquote>
-<h2>Perimetro e scopo</h2>
-<p>Non determinabile al momento: non è presente alcun materiale (documenti, email, note) nella cartella del canale dedicata a questa opportunità.</p>
-<h2>Richiesta cliente</h2>
-<p>Non disponibile. Non risultano file, note o riferimenti che permettano di ricostruire la richiesta del cliente RCS.</p>
-<h2>Stato</h2>
-<p><strong>Fase:</strong> nessuna informazione. La sottocartella "RCS - Rizzoli Corriere Della Sera" esiste nel canale Teams ma non contiene ancora file. Questo documento verrà aggiornato automaticamente non appena lo scan rileverà nuovi file nella cartella.</p>
-<h2>Idee proposte dall'agente</h2>
-<blockquote class="src-note">
-<p>Contenuto generato da questo agente, da validare.</p>
-</blockquote>
-<ol>
-<li><strong>Nessuna proposta di merito è possibile in assenza di materiale.</strong> Azione consigliata: verificare con il team se esistono materiali non ancora caricati nel canale, oppure se l'opportunità è ancora in fase di qualifica iniziale.</li>
-<li>Mantenere questo documento come placeholder e lasciare che il meccanismo di scan/diff lo segnali per aggiornamento alla prima comparsa di file nella cartella.</li>
-</ol>
+    <div class="flip-card reveal" style="--accent:#5F7290" data-opp="presales-rcs">
+      <div class="flip-card-inner">
+        <div class="flip-face flip-face-front">
+          <span class="opp-num">04 / OPPORTUNITÀ</span>
+          <span class="opp-status" style="--accent:#5F7290">Nessuna info</span>
+          <div class="opp-title">RCS - Rizzoli Corriere Della Sera</div>
+          <div class="opp-client">RCS</div>
+          <p class="opp-summary">Cartella dell'opportunità ancora vuota: nessun materiale caricato nel canale, perimetro e richiesta cliente non ricostruibili al momento.</p>
+          <div class="flip-hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 7h16M4 12h16M4 17h10"/></svg> Clicca per girare la card</div>
+        </div>
+        <div class="flip-face flip-face-back">
+          <span class="opp-back-label">Richiesta cliente</span>
+          <p class="opp-back-text">Non disponibile. Non risultano file, note o riferimenti che permettano di ricostruire la richiesta del cliente RCS.</p>
+          <div class="opp-meta-row">
+            <span><b>Macro ambito:</b> Non ancora definito</span>
+            <span><b>File sorgente:</b> 0</span>
+            <span><b>Aggiornato:</b> 5 ott 2026 · 15:22 UTC</span>
+          </div>
+          <a class="opp-detail-link" href="opportunita/rcs.html">Apri dettaglio completo
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
         </div>
       </div>
-    </article>
+    </div>
     </div>
   </div>
 </section>
@@ -622,7 +297,7 @@ Data rilevamento: 2026-10-05. Snapshot di riferimento: prima baseline (tutte le 
 <footer>
   <div class="wrap">
     <div><strong>PreSales Opportunity</strong> — generata da <code>teams-channel-agent</code>, dati da DocMind (progetto PreSales).</div>
-    <div>Ultima rigenerazione pagina: 5 ott 2026 · 15:25 UTC</div>
+    <div>Ultima rigenerazione pagina: 5 ott 2026 · 15:32 UTC</div>
   </div>
 </footer>
 
@@ -644,18 +319,23 @@ const io = new IntersectionObserver((entries)=>{
 },{threshold:0.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-// accordion for opportunity cards
-document.querySelectorAll('.opp-card').forEach(card=>{
-  const head = card.querySelector('.opp-head');
-  const body = card.querySelector('.opp-body');
-  head.addEventListener('click', ()=>{
-    const isOpen = card.classList.contains('is-open');
-    document.querySelectorAll('.opp-card.is-open').forEach(c=>{
-      if(c!==card){ c.classList.remove('is-open'); c.querySelector('.opp-head').setAttribute('aria-expanded','false'); }
-    });
-    card.classList.toggle('is-open', !isOpen);
-    head.setAttribute('aria-expanded', String(!isOpen));
-    if(!isOpen){ setTimeout(()=>card.scrollIntoView({behavior:'smooth', block:'nearest'}), 120); }
+// flip cards for opportunities: click/tap/Enter flips, click sul link di dettaglio no-flip
+document.querySelectorAll('.flip-card').forEach(card=>{
+  card.setAttribute('tabindex','0');
+  card.setAttribute('role','button');
+  card.setAttribute('aria-pressed','false');
+  const toggle = ()=>{
+    const flipped = card.classList.toggle('is-flipped');
+    card.setAttribute('aria-pressed', String(flipped));
+  };
+  card.addEventListener('click', (e)=>{
+    if(e.target.closest('a.opp-detail-link')) return; // lascia navigare il link
+    toggle();
+  });
+  card.addEventListener('keydown', (e)=>{
+    if((e.key === 'Enter' || e.key === ' ') && !e.target.closest('a.opp-detail-link')){
+      e.preventDefault(); toggle();
+    }
   });
 });
 
