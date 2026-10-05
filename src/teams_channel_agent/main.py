@@ -103,6 +103,38 @@ def list_files() -> None:
         console.print(f"- {f}")
 
 
+def scan_opportunities() -> None:
+    """Rileva nuove opportunità e file nuovi/modificati/rimossi rispetto
+    all'ultimo scan (snapshot in output/opportunities_snapshot.json)."""
+    from .local_files.diff import scan
+
+    diff = scan()
+    console.print("[bold]Scan opportunità (fonte: file locale / OneDrive sync)[/bold]")
+
+    if not diff.has_changes:
+        console.print("Nessuna novità rispetto all'ultimo scan.")
+        return
+
+    if diff.new_opportunities:
+        console.print("\n[green]Nuove opportunità:[/green]")
+        for o in diff.new_opportunities:
+            console.print(f"  + {o}")
+    if diff.removed_opportunities:
+        console.print("\n[red]Opportunità non più presenti:[/red]")
+        for o in diff.removed_opportunities:
+            console.print(f"  - {o}")
+    for label, data, color in (
+        ("File nuovi", diff.new_files, "green"),
+        ("File modificati", diff.modified_files, "yellow"),
+        ("File rimossi", diff.removed_files, "red"),
+    ):
+        if data:
+            console.print(f"\n[{color}]{label}:[/{color}]")
+            for opp, files in data.items():
+                for f in files:
+                    console.print(f"  [{opp}] {f}")
+
+
 def main() -> None:
     args = sys.argv[1:]
     command = args[0] if args else "check-env"
@@ -114,6 +146,7 @@ def main() -> None:
         "whoami": whoami,
         "list-opportunities": list_opportunities,
         "list-files": list_files,
+        "scan-opportunities": scan_opportunities,
     }
 
     if command in commands:
