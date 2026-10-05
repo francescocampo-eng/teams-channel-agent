@@ -45,7 +45,8 @@ Istruzioni:
 - Aggiorna sempre anche presales-overview (tabella/mappa) per riflettere lo stato corrente di tutte le opportunità.
 - Non modificare file locali nelle cartelle del canale (sola lettura).
 - Se il diff riguarda solo file non rilevanti per nessuna opportunità esistente o nuova, non fare nulla oltre a un log.
-- Alla fine stampa un breve riepilogo testuale di cosa è stato aggiornato."
+- Dopo aver aggiornato DocMind, allinea anche la pagina HTML di presentazione: sovrascrivi i file markdown corrispondenti in site/data/raw/ (overview.md, star-hotels.md, milano-ristorazione.md, arpav.md, rcs.md; per una nuova opportunità crea il nuovo file .md corrispondente e aggiungine i metadati in site/build_content.py, sezione OPPS_META/FILES) con lo stesso contenuto appena scritto su DocMind, poi esegui 'python3 site/build_content.py && python3 site/generate_site.py' per rigenerare site/index.html.
+- Alla fine stampa un breve riepilogo testuale di cosa è stato aggiornato (DocMind + pagina HTML)."
 
 if copilot -p "$PROMPT" --allow-all-tools --silent >> "$LOG_FILE" 2>&1; then
     echo "[$TS] Aggiornamento completato." >> "$LOG_FILE"

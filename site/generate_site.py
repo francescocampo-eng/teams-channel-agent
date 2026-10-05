@@ -108,6 +108,7 @@ def main():
     n_opps = len(opportunities)
     n_files = sum(o["fileCount"] for o in opportunities)
     generated_at = fmt_date(data["generatedAt"])
+    data_updated_at = fmt_date(data["dataUpdatedAt"])
 
     template = (HERE / "template.html").read_text(encoding="utf-8")
     html = template
@@ -116,6 +117,7 @@ def main():
     html = html.replace("__N_OPPS__", str(n_opps))
     html = html.replace("__N_FILES__", str(n_files))
     html = html.replace("__GENERATED_AT__", generated_at)
+    html = html.replace("__DATA_UPDATED_AT__", data_updated_at)
 
     OUT_FILE.write_text(html, encoding="utf-8")
     print(f"Scritto {OUT_FILE} ({OUT_FILE.stat().st_size} bytes)")

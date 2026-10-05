@@ -13,7 +13,7 @@
   --bg:#050B16; --bg2:#081222; --bg3:#0C1830;
   --card:#0F1F38; --card2:#122744;
   --line:#1C2E4B; --line2:#2A4068;
-  --ink:#EEF3FB; --ink2:#A6B6D4; --ink3:#5F7290;
+  --ink:#FFFFFF; --ink2:#CBD8EE; --ink3:#8EA1C4;
   --blue:#0073CE; --blue2:#39A7FF; --blue-deep:#003170;
   --on-accent:#03101F;
   --radius:20px;
@@ -24,8 +24,8 @@
 html{scroll-behavior:smooth;background:var(--bg)}
 body{
   margin:0;background:
-    radial-gradient(70vmax 50vmax at 85% -10%, color-mix(in srgb, var(--blue) 18%, transparent), transparent 60%),
-    radial-gradient(60vmax 40vmax at 0% 10%, color-mix(in srgb, var(--blue-deep) 35%, transparent), transparent 55%),
+    radial-gradient(70vmax 50vmax at 85% -10%, color-mix(in srgb, var(--blue) 12%, transparent), transparent 60%),
+    radial-gradient(60vmax 40vmax at 0% 10%, color-mix(in srgb, var(--blue-deep) 24%, transparent), transparent 55%),
     var(--bg);
   color:var(--ink);
   font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
@@ -56,13 +56,24 @@ nav.links a:hover{color:var(--ink)}
 .nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 24px -8px color-mix(in srgb, var(--blue) 70%, transparent)}
 
 /* hero */
-.hero{position:relative;padding:188px 0 110px;overflow:hidden}
-.kicker{display:inline-flex;align-items:center;gap:8px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--blue2);background:color-mix(in srgb, var(--blue) 12%, transparent);border:1px solid color-mix(in srgb, var(--blue) 35%, transparent);padding:7px 14px;border-radius:980px;margin-bottom:26px}
+.hero{position:relative;padding:176px 0 100px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:48px;align-items:start}
+.hero-visual{position:relative;min-height:380px;border:1px solid var(--line2);border-radius:26px;background:linear-gradient(165deg, var(--card2), var(--bg2));overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:26px}
+.hero-visual::before{content:"";position:absolute;inset:-30%;background:conic-gradient(from 180deg at 50% 50%, transparent, color-mix(in srgb,var(--blue2) 30%, transparent), transparent 60%);animation:spin 14s linear infinite;opacity:.5}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-visual .hv-row{position:relative;display:flex;justify-content:space-between;align-items:center;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink3)}
+.hero-visual .hv-pyramid{position:relative;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px 0}
+.hv-tier{display:flex;align-items:center;justify-content:center;border:1px solid var(--line2);border-radius:12px;background:color-mix(in srgb, var(--bg2) 70%, transparent);color:var(--ink2);font-size:12.5px;font-weight:600;padding:12px 0}
+.hv-tier.t1{width:60%}
+.hv-tier.t2{width:84%}
+.hv-tier.t3{width:100%}
+.hv-tier b{color:var(--blue2);font-family:"IBM Plex Mono",monospace;margin-right:6px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--blue2);background:color-mix(in srgb, var(--blue) 12%, transparent);border:1px solid color-mix(in srgb, var(--blue) 35%, transparent);padding:7px 14px;border-radius:980px;margin-bottom:26px;flex-wrap:wrap}
 .kicker .dot-live{width:7px;height:7px;border-radius:50%;background:#4ADE80;box-shadow:0 0 0 3px color-mix(in srgb,#4ADE80 30%, transparent);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-h1.title{font-size:clamp(44px,8vw,92px);font-weight:700;line-height:.98;letter-spacing:-.03em;max-width:980px}
+h1.title{font-size:clamp(44px,6.4vw,84px);font-weight:700;line-height:.98;letter-spacing:-.03em}
 h1.title .accent{background:linear-gradient(100deg,var(--blue2),#9fd8ff 60%, var(--blue2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p.lead{margin-top:26px;max-width:620px;font-size:19px;color:var(--ink2);line-height:1.6}
+.hero p.lead{margin-top:26px;max-width:92%;font-size:19px;color:var(--ink2);line-height:1.65}
 .hero-cta-row{margin-top:40px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
 .btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#061020;font-weight:700;padding:14px 24px;border-radius:980px;text-decoration:none;font-size:14.5px;transition:transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 34px -10px rgba(255,255,255,.25)}
@@ -81,7 +92,7 @@ h1.title .accent{background:linear-gradient(100deg,var(--blue2),#9fd8ff 60%, var
 /* section generic */
 section{padding:108px 0;position:relative}
 .section-label{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue2);margin-bottom:14px;display:block}
-.section-head{max-width:720px;margin-bottom:56px}
+.section-head{max-width:800px;margin-bottom:56px}
 .section-head h2{font-size:clamp(28px,4.2vw,44px);font-weight:600;line-height:1.08}
 .section-head p{margin-top:16px;color:var(--ink2);font-size:16.5px;line-height:1.65}
 
@@ -162,6 +173,10 @@ footer{padding:70px 0 50px;border-top:1px solid var(--line)}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;color:var(--ink3);font-size:13px}
 footer strong{color:var(--ink2)}
 
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-visual{display:none}
+}
 @media (max-width:720px){
   .opp-head{grid-template-columns:auto 1fr;grid-template-areas:"num main" "status status";row-gap:10px}
   .opp-status{grid-area:status;justify-self:start}
@@ -192,21 +207,34 @@ footer strong{color:var(--ink2)}
 
 <section class="hero" id="top">
   <div class="wrap">
-    <span class="kicker"><span class="dot-live"></span> Aggiornato automaticamente dall'agente</span>
-    <h1 class="title">PreSales<br><span class="accent">Opportunity.</span></h1>
-    <p class="lead">La mappa viva di tutte le opportunità presales in corso: rilevate, analizzate e tenute aggiornate da un agente che lavora direttamente sulla documentazione del canale, e scrive la sintesi su DocMind.</p>
-    <div class="hero-cta-row">
-      <a href="#opportunita" class="btn-primary">Vai alle opportunità
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg>
-      </a>
-      <a href="#come-funziona" class="scroll-hint"><span class="circle">&darr;</span> scopri come funziona</a>
+    <div class="hero-grid">
+      <div class="hero-text">
+        <span class="kicker"><span class="dot-live"></span> Dati agg. 5 ott 2026 · 15:22 UTC &middot; Sito agg. 5 ott 2026 · 15:25 UTC</span>
+        <h1 class="title">PreSales<br><span class="accent">Opportunity.</span></h1>
+        <p class="lead">La mappa viva di tutte le opportunità presales in corso: rilevate, analizzate e tenute aggiornate da un agente che lavora direttamente sulla documentazione del canale, e scrive la sintesi su DocMind.</p>
+        <div class="hero-cta-row">
+          <a href="#opportunita" class="btn-primary">Vai alle opportunità
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+          <a href="#come-funziona" class="scroll-hint"><span class="circle">&darr;</span> scopri come funziona</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="hv-row"><span>PIRAMIDE DATI</span><span>live</span></div>
+        <div class="hv-pyramid">
+          <div class="hv-tier t1"><b>01</b> Overview</div>
+          <div class="hv-tier t2"><b>02</b> Dettaglio x4</div>
+          <div class="hv-tier t3"><b>03</b> Idee agente</div>
+        </div>
+        <div class="hv-row"><span>fonte</span><span>DocMind · PreSales</span></div>
+      </div>
     </div>
 
     <div class="stats">
       <div class="stat"><div class="num mono">4</div><div class="lab">Opportunità monitorate</div></div>
       <div class="stat"><div class="num mono">8</div><div class="lab">File sorgente analizzati</div></div>
       <div class="stat"><div class="num mono">1</div><div class="lab">Documento di panoramica</div></div>
-      <div class="stat"><div class="num mono" id="statUpdated">live</div><div class="lab">Ultimo aggiornamento: 5 ott 2026 · 15:00 UTC</div></div>
+      <div class="stat"><div class="num mono" id="statUpdated">5 ott 2026 · 15:22 UTC</div><div class="lab">Ultimo aggiornamento dati</div></div>
     </div>
   </div>
 </section>
@@ -247,7 +275,7 @@ footer strong{color:var(--ink2)}
       <div class="overview-head">
         <span class="overview-kicker">01 &middot; Panoramica generale</span>
         <h3>Presales - Panoramica Opportunità (mappa dei filoni)</h3>
-        <span class="overview-updated">Aggiornato 5 ott 2026 · 13:45 UTC</span>
+        <span class="overview-updated">Aggiornato 5 ott 2026 · 15:22 UTC</span>
       </div>
       <div class="opp-body opp-body--open">
         <div class="opp-body-inner prose">
@@ -354,7 +382,7 @@ Data rilevamento: 2026-10-05. Snapshot di riferimento: prima baseline (tutte le 
         <span class="dot">&middot;</span>
         <span>1 file sorgente</span>
         <span class="dot">&middot;</span>
-        <span>agg. 5 ott 2026 · 14:45 UTC</span>
+        <span>agg. 5 ott 2026 · 15:22 UTC</span>
       </div>
       <div class="opp-body">
         <div class="opp-body-inner prose">
@@ -418,7 +446,7 @@ Data rilevamento: 2026-10-05. Snapshot di riferimento: prima baseline (tutte le 
         <span class="dot">&middot;</span>
         <span>4 file sorgente</span>
         <span class="dot">&middot;</span>
-        <span>agg. 5 ott 2026 · 13:46 UTC</span>
+        <span>agg. 5 ott 2026 · 15:22 UTC</span>
       </div>
       <div class="opp-body">
         <div class="opp-body-inner prose">
@@ -505,7 +533,7 @@ Data rilevamento: 2026-10-05. Snapshot di riferimento: prima baseline (tutte le 
         <span class="dot">&middot;</span>
         <span>3 file sorgente</span>
         <span class="dot">&middot;</span>
-        <span>agg. 5 ott 2026 · 13:46 UTC</span>
+        <span>agg. 5 ott 2026 · 15:22 UTC</span>
       </div>
       <div class="opp-body">
         <div class="opp-body-inner prose">
@@ -562,7 +590,7 @@ Data rilevamento: 2026-10-05. Snapshot di riferimento: prima baseline (tutte le 
         <span class="dot">&middot;</span>
         <span>0 file sorgente</span>
         <span class="dot">&middot;</span>
-        <span>agg. 5 ott 2026 · 13:47 UTC</span>
+        <span>agg. 5 ott 2026 · 15:22 UTC</span>
       </div>
       <div class="opp-body">
         <div class="opp-body-inner prose">
@@ -594,7 +622,7 @@ Data rilevamento: 2026-10-05. Snapshot di riferimento: prima baseline (tutte le 
 <footer>
   <div class="wrap">
     <div><strong>PreSales Opportunity</strong> — generata da <code>teams-channel-agent</code>, dati da DocMind (progetto PreSales).</div>
-    <div>Ultima rigenerazione pagina: 5 ott 2026 · 15:00 UTC</div>
+    <div>Ultima rigenerazione pagina: 5 ott 2026 · 15:25 UTC</div>
   </div>
 </footer>
 
