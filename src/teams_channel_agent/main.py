@@ -105,10 +105,34 @@ def list_files() -> None:
 
 def scan_opportunities() -> None:
     """Rileva nuove opportunità e file nuovi/modificati/rimossi rispetto
-    all'ultimo scan (snapshot in output/opportunities_snapshot.json)."""
+    all'ultimo scan (snapshot in output/opportunities_snapshot.json).
+
+    Con l'argomento --json stampa il diff in formato JSON su stdout (usato
+    dallo script di automazione `scripts/presales_autoupdate.sh`) invece
+    dell'output colorato per uso interattivo.
+    """
+    import json as _json
+
     from .local_files.diff import scan
 
     diff = scan()
+
+    if "--json" in sys.argv[2:]:
+        print(
+            _json.dumps(
+                {
+                    "has_changes": diff.has_changes,
+                    "new_opportunities": diff.new_opportunities,
+                    "removed_opportunities": diff.removed_opportunities,
+                    "new_files": diff.new_files,
+                    "modified_files": diff.modified_files,
+                    "removed_files": diff.removed_files,
+                },
+                ensure_ascii=False,
+            )
+        )
+        return
+
     console.print("[bold]Scan opportunità (fonte: file locale / OneDrive sync)[/bold]")
 
     if not diff.has_changes:

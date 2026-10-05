@@ -7,3 +7,5 @@ output/*
 !output/.gitkeep
 .pytest_cache/
 *.egg-info/
+logs/*
+!logs/.gitkeep

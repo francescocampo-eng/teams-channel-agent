@@ -39,6 +39,27 @@ output/             # artefatti generati (ignorato da git, salvo .gitkeep)
 python -m teams_channel_agent.main check-env
 ```
 
+## Automazione: aggiornamento autonomo dei documenti DocMind "PreSales"
+
+Lo script `scripts/presales_autoupdate.sh`:
+1. esegue `scan-opportunities --json` (diff su cartelle/file nuovi, modificati, rimossi, nuove opportunità);
+2. se non ci sono novità esce subito (nessuna chiamata esterna, nessun upload);
+3. se ci sono novità, invoca `copilot -p "..." --allow-all-tools --silent` passando il diff, con istruzioni di aggiornare **solo** il progetto DocMind `PreSales` (overview + documenti di dettaglio delle opportunità interessate, o crearne uno nuovo se è comparsa una nuova opportunità).
+
+Log di ogni esecuzione: `logs/presales_autoupdate.log` (non versionato).
+
+Schedulazione installata (cron utente, ogni ora dalle 9 alle 18):
+```
+0 9-18 * * * PATH=/usr/bin:/usr/local/bin:/bin /usr/bin/bash /home/fcampo/copilot-projects/teams-channel-agent/scripts/presales_autoupdate.sh
+```
+Modificabile con `crontab -e`.
+
+**Limite importante**: il job gira solo mentre questa istanza WSL è avviata
+(cron non sopravvive allo spegnimento di WSL/Windows). Se la macchina è
+spenta durante l'orario previsto, quella esecuzione viene semplicemente
+saltata: alla riaccensione lo scan successivo rileverà comunque tutte le
+novità accumulate nel frattempo.
+
 ## Principi di progetto
 
 - DocMind è una capability già esistente: non va reinstallato né duplicato.
