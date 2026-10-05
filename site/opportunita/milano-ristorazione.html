@@ -38,7 +38,7 @@
     <div class="detail-meta">
       <span><b>Macro ambito:</b> Portale ticketing MVP + integrazione Dynamics CRM</span>
       <span><b>File sorgente:</b> 4</span>
-      <span><b>Aggiornato:</b> 5 ott 2026 · 15:40 UTC</span>
+      <span><b>Aggiornato:</b> 5 ott 2026 · 15:46 UTC</span>
     </div>
   </div>
 </section>
@@ -116,37 +116,38 @@
 <h2 id="preparazione-meeting-con-adessoit-06102026">Preparazione meeting con Adesso.it (06/10/2026)</h2>
 <blockquote class="src-note">
 <p>Contenuto preparato come primo task assegnato sull'iniziativa, in vista del meeting tecnico con Adesso.it del 06/10/2026. Base: checklist <code>TODO_Meeting_Tecnico_Adesso_MiRi.md</code>, business case WBS e i due PDF di analisi As-Is/To-Be e ticketing. Da validare/integrare durante e dopo il meeting.</p>
+<p>ID stabili per riferimento in sede di meeting e nel verbale che seguirà (convenzione <code>D</code>=domanda, <code>OP</code>=open point, <code>R</code>=rischio): ogni voce sotto può essere citata per ID durante la discussione invece di doverla ridescrivere.</p>
 </blockquote>
 <h3 id="domande-per-adessoit">Domande per Adesso.it</h3>
 <ol>
-<li>Chi è l'account lead congiunto lato Adesso.it e chi ha mandato a decidere in sessione (per evitare di tornare a chiedere mandato dopo il meeting)?</li>
-<li>Come vedete la narrativa verso Milano Ristorazione: Adesso.it presidio relazione/coordinamento, ENG guida architettura/integrazioni/delivery — confermate questo split o lo intendete diversamente?</li>
-<li>Prime contractor: chi fattura al cliente e come si regola la subfornitura ENG (perimetro economico, non solo tecnico)?</li>
-<li>Come gestiamo insieme le change request dopo la baseline — c'è già un processo Adesso.it-cliente in cui ENG si deve inserire, o lo definiamo da zero?</li>
-<li>Chi è owner degli artefatti (WBS, documentazione architetturale, codice) e con quale licenza/proprietà verso il cliente?</li>
-<li>È previsto supporto post go-live (hypercare, L2/L3)? Con quale perimetro e per quanto tempo, e chi lo presidia?</li>
-<li>Quali materiali (deck, WBS, stima) possiamo condividere direttamente con Milano Ristorazione, e con quale branding (ENG, Adesso.it, congiunto)?</li>
-<li>Sul CRM Dynamics: chi ha accesso/ownership dell'ambiente e dei dati, Adesso.it o il cliente? ENG avrà un ambiente di test dedicato?</li>
-<li>Sulla scadenza licenze (menzionata come vincolo nella checklist): qual è la data esatta e quali sono i margini di proroga già negoziati o negoziabili?</li>
-<li>È disponibile o pianificabile una vertical slice identity-to-CRM come prova di fattibilità separata, prima di una stima vincolante?</li>
+<li><strong>D1</strong> — Chi è l'account lead congiunto lato Adesso.it e chi ha mandato a decidere in sessione (per evitare di tornare a chiedere mandato dopo il meeting)?</li>
+<li><strong>D2</strong> — Come vedete la narrativa verso Milano Ristorazione: Adesso.it presidio relazione/coordinamento, ENG guida architettura/integrazioni/delivery — confermate questo split o lo intendete diversamente? <em>(collegata a OP-ORG-1/nodo critico sotto)</em></li>
+<li><strong>D3</strong> — Prime contractor: chi fattura al cliente e come si regola la subfornitura ENG (perimetro economico, non solo tecnico)?</li>
+<li><strong>D4</strong> — Come gestiamo insieme le change request dopo la baseline — c'è già un processo Adesso.it-cliente in cui ENG si deve inserire, o lo definiamo da zero?</li>
+<li><strong>D5</strong> — Chi è owner degli artefatti (WBS, documentazione architetturale, codice) e con quale licenza/proprietà verso il cliente?</li>
+<li><strong>D6</strong> — È previsto supporto post go-live (hypercare, L2/L3)? Con quale perimetro e per quanto tempo, e chi lo presidia?</li>
+<li><strong>D7</strong> — Quali materiali (deck, WBS, stima) possiamo condividere direttamente con Milano Ristorazione, e con quale branding (ENG, Adesso.it, congiunto)?</li>
+<li><strong>D8</strong> — Sul CRM Dynamics: chi ha accesso/ownership dell'ambiente e dei dati, Adesso.it o il cliente? ENG avrà un ambiente di test dedicato?</li>
+<li><strong>D9</strong> — Sulla scadenza licenze (vincolo citato nella checklist): qual è la data esatta e quali sono i margini di proroga già negoziati o negoziabili? Se la risposta è vaga, è un segnale che il gate "non impegnare la data di go-live" (vedi R2) va mantenuto esplicitamente in chiusura meeting.</li>
+<li><strong>D10</strong> — È disponibile o pianificabile una vertical slice identity-to-CRM come prova di fattibilità separata, prima di una stima vincolante?</li>
 </ol>
 <h3 id="punti-aperti-da-validare-per-area">Punti aperti da validare (per area)</h3>
 <p><strong>Funzionale</strong>
-- Conferma perimetro MVP (login/registrazione, lista/dettaglio ticket, apertura/risposta, stato ticket, propagazione profilo a Dynamics) ed esclusioni esplicite (rette, iscrizioni, presenze, diete, pagamenti, CMS, migrazione/decommissioning).
-- Service blueprint minimo: journey famiglie, scuole, operatori CRM — non ancora validato con il cliente.</p>
+- <strong>OP-FUN-1</strong> — Conferma perimetro MVP (login/registrazione, lista/dettaglio ticket, apertura/risposta, stato ticket, propagazione profilo a Dynamics) ed esclusioni esplicite (rette, iscrizioni, presenze, diete, pagamenti, CMS, migrazione/decommissioning).
+- <strong>OP-FUN-2</strong> — Service blueprint minimo: journey famiglie, scuole, operatori CRM — non ancora validato con il cliente.</p>
 <p><strong>Tecnica / Integrazioni</strong>
-- Identity-to-CRM: regole di matching, consenso, account linking, gestione duplicati, riconciliazione manuale — nessuna risposta ancora.
-- Sistemi sorgente, API, limiti di chiamata, ambienti/dati di test per CRM, SPID/CIE, identità B2C, API Gateway/event bus.
-- NFR da validare: sicurezza, privacy/DPIA, accessibilità, performance, disponibilità, audit, retention, notifiche, SLA, allegati, reporting, supporto.</p>
+- <strong>OP-TEC-1</strong> — Identity-to-CRM: regole di matching, consenso, account linking, gestione duplicati, riconciliazione manuale — nessuna risposta ancora. <em>(nodo a effort/calendario più alto, vedi R3)</em>
+- <strong>OP-TEC-2</strong> — Sistemi sorgente, API, limiti di chiamata, ambienti/dati di test per CRM, SPID/CIE, identità B2C, API Gateway/event bus.
+- <strong>OP-TEC-3</strong> — NFR da validare: sicurezza, privacy/DPIA, accessibilità, performance, disponibilità, audit, retention, notifiche, SLA, allegati, reporting, supporto.</p>
 <p><strong>Organizzativa / Governance</strong>
-- RACI formale (proposta a 6 livelli già abbozzata, da far firmare, non solo discutere).
-- Composizione nucleo di delivery per fase (seniority, mix interno/partner, backup) — non definibile finché dipendenze e requisiti non sono chiusi.
-- Modello di escalation e gestione change request post-baseline.</p>
+- <strong>OP-ORG-1</strong> — RACI formale (proposta a 6 livelli già abbozzata, da far firmare, non solo discutere). <em>(collegata a D2 e al nodo critico di responsabilità sotto)</em>
+- <strong>OP-ORG-2</strong> — Composizione nucleo di delivery per fase (seniority, mix interno/partner, backup) — non definibile finché dipendenze e requisiti non sono chiusi.
+- <strong>OP-ORG-3</strong> — Modello di escalation e gestione change request post-baseline.</p>
 <p><strong>Dati / Volumi</strong>
-- Nessuna baseline affidabile di utenti, ticket, concorrenza, allegati: servono 3 profili (normale/picco/stress) da costruire nel workshop, non numeri "a sensazione".</p>
+- <strong>OP-DAT-1</strong> — Nessuna baseline affidabile di utenti, ticket, concorrenza, allegati: servono 3 profili (normale/picco/stress) da costruire nel workshop, non numeri "a sensazione".</p>
 <p><strong>Commerciale</strong>
-- Prime contractor e perimetro economico ENG vs Adesso.it.
-- Gate esplicito: non impegnare prezzo/data di go-live finché volumi, NFR, identity-to-CRM, disponibilità integrazioni e proroga licenze non sono verificati.</p>
+- <strong>OP-COM-1</strong> — Prime contractor e perimetro economico ENG vs Adesso.it.
+- <strong>OP-COM-2</strong> — Gate esplicito: non impegnare prezzo/data di go-live finché volumi, NFR, identity-to-CRM, disponibilità integrazioni e proroga licenze non sono verificati.</p>
 <h3 id="ambiti-di-responsabilità-da-chiarire">Ambiti di responsabilità da chiarire</h3>
 <table>
 <thead>
@@ -196,7 +197,7 @@
 </tr>
 </tbody>
 </table>
-<p>Nodo critico da chiarire in meeting: dove finisce il "coordinamento" di Adesso.it e dove inizia la "guida tecnica" di ENG su architettura/integrazioni — è l'area con più rischio di sovrapposizione operativa.</p>
+<p>Nodo critico da chiarire in meeting (<strong>OP-ORG-1</strong>): dove finisce il "coordinamento" di Adesso.it e dove inizia la "guida tecnica" di ENG su architettura/integrazioni — è l'area con più rischio di sovrapposizione operativa. Controfattuale da verificare: se Adesso.it intende mantenere anche le decisioni architetturali (non solo la relazione), lo split di scope qui sotto va rivisto prima, non dopo, la firma della RACI.</p>
 <h3 id="ipotesi-di-nostro-scope-eng">Ipotesi di nostro scope (ENG)</h3>
 <ul>
 <li><strong>Dentro perimetro</strong>: solution architecture, integrazioni (API Gateway/event bus, listener CRM), identity-to-CRM, configurazione Dynamics lato integrazione, sviluppo portale/ticketing, test integrati, cloud/DevOps, sicurezza tecnica, supporto a UAT/cutover.</li>
@@ -241,14 +242,54 @@
 <li><strong>Dipendenze/assunzioni da validare prima che la stima diventi vincolante</strong>: disponibilità tempestiva di ambienti/API/referenti cliente, nessuna migrazione dati, perimetro Dynamics limitato al flusso MVP, dati di volume reali (oggi assenti), esito vertical slice identity-to-CRM.</li>
 </ul>
 <h3 id="rischi-e-assunzioni">Rischi e assunzioni</h3>
-<ul>
-<li><strong>Rischio di sovrapposizione operativa</strong>: confine sfumato tra "coordinamento" (Adesso.it) e "guida tecnica" (ENG) su architettura/integrazioni — senza RACI firmata prima del meeting, rischio di decisioni prese due volte o di nessuno.</li>
-<li><strong>Rischio stima</strong>: la baseline ROM non ha ancora volumi reali (utenti, ticket, picchi, allegati) — presentarla come "preliminare" esplicitamente, non come impegno.</li>
-<li><strong>Rischio identity-to-CRM</strong>: è il nodo tecnico più critico e meno definito (matching, consenso, duplicati) — può spostare effort e calendario più di ogni altra dipendenza.</li>
-<li><strong>Rischio commerciale</strong>: prime contractor e perimetro economico non ancora chiariti — da risolvere prima di condividere stime con il cliente finale.</li>
-<li><strong>Assunzione da verificare</strong>: scadenza licenze attuali e margine di proroga — condiziona la rigidità della data di go-live.</li>
-<li><strong>Assunzione da verificare</strong>: disponibilità di ambienti/dati di test per CRM, SPID/CIE, identità B2C, API Gateway in tempi compatibili con la pianificazione.</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Rischio / assunzione</th>
+<th>Implicazione se non gestito</th>
+<th>Mitigazione proposta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>R1</strong></td>
+<td>Sovrapposizione operativa: confine sfumato tra "coordinamento" (Adesso.it) e "guida tecnica" (ENG) su architettura/integrazioni (OP-ORG-1)</td>
+<td>Decisioni prese due volte, o da nessuno, a metà progetto</td>
+<td>RACI firmata <strong>prima</strong> del meeting (bozza, non discussione a voce) — vedi D2</td>
+</tr>
+<tr>
+<td><strong>R2</strong></td>
+<td>Stima ROM senza volumi reali (utenti, ticket, picchi, allegati)</td>
+<td>Rischio di percepire la stima come impegno vincolante</td>
+<td>Presentarla esplicitamente come "preliminare"; mantenere il gate OP-COM-2 (non impegnare prezzo/data)</td>
+</tr>
+<tr>
+<td><strong>R3</strong></td>
+<td>Identity-to-CRM è il nodo tecnico più critico e meno definito (matching, consenso, duplicati)</td>
+<td>Può spostare effort e calendario più di ogni altra dipendenza</td>
+<td>Vertical slice dedicata (D10) prima di stima vincolante</td>
+</tr>
+<tr>
+<td><strong>R4</strong></td>
+<td>Prime contractor e perimetro economico non ancora chiariti (OP-COM-1)</td>
+<td>Blocca la condivisione di stime con il cliente finale</td>
+<td>Chiudere D3 in meeting, non rimandarlo a un follow-up separato</td>
+</tr>
+<tr>
+<td><strong>R5 (assunzione)</strong></td>
+<td>Scadenza licenze attuali e margine di proroga non confermati</td>
+<td>Condiziona la rigidità della data di go-live</td>
+<td>Verificare con D9; se la risposta resta vaga, mantenere il gate su go-live</td>
+</tr>
+<tr>
+<td><strong>R6 (assunzione)</strong></td>
+<td>Disponibilità di ambienti/dati di test (CRM, SPID/CIE, identità B2C, API Gateway) nei tempi del piano</td>
+<td>Slittamento a cascata su sviluppo e test integrati</td>
+<td>Dependency matrix con owner e data esplicita (azione da chiudere in meeting, non dopo)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="idee-proposte-dallagente">Idee proposte dall'agente</h2>
 <blockquote class="src-note">
 <p>Contenuto generato da questo agente (non dal cliente/partner), da validare prima di presentarlo ad Adesso.it/Milano Ristorazione. Approccio ispirato ai planner ENGenius (ANALYSIS, FP_SIZING, WBS, ACTIVITY).</p>
@@ -269,7 +310,7 @@
 <footer>
   <div class="wrap">
     <div><strong>PreSales Opportunity</strong> — generata da <code>teams-channel-agent</code>, dati da DocMind (progetto PreSales).</div>
-    <div>Ultima rigenerazione pagina: 5 ott 2026 · 15:40 UTC</div>
+    <div>Ultima rigenerazione pagina: 5 ott 2026 · 15:47 UTC</div>
   </div>
 </footer>
 
