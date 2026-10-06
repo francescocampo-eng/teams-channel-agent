@@ -24,6 +24,8 @@
       <a href="#come-funziona">Come funziona</a>
       <a href="#panoramica">Panoramica</a>
       <a href="#opportunita">Opportunità</a>
+      <a href="calendario.html">Calendario</a>
+      <a href="riepilogo.html">Riepilogo iniziative</a>
       <a href="#panoramica" class="nav-cta">Esplora</a>
     </nav>
   </div>
@@ -33,7 +35,7 @@
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-text">
-        <span class="kicker"><span class="dot-live"></span> Dati agg. 5 ott 2026 · 15:49 UTC &middot; Sito agg. 5 ott 2026 · 15:49 UTC</span>
+        <span class="kicker"><span class="dot-live"></span> Dati agg. 6 ott 2026 · 11:31 UTC &middot; Sito agg. 6 ott 2026 · 11:59 UTC</span>
         <h1 class="title">PreSales<br><span class="accent">Opportunity.</span></h1>
         <p class="lead">La mappa viva di tutte le opportunità presales in corso: rilevate, analizzate e tenute aggiornate da un agente che lavora direttamente sulla documentazione del canale, e scrive la sintesi su DocMind.</p>
         <div class="hero-cta-row">
@@ -58,7 +60,7 @@
       <div class="stat"><div class="num mono">4</div><div class="lab">Opportunità monitorate</div></div>
       <div class="stat"><div class="num mono">8</div><div class="lab">File sorgente analizzati</div></div>
       <div class="stat"><div class="num mono">1</div><div class="lab">Documento di panoramica</div></div>
-      <div class="stat"><div class="num mono" id="statUpdated">5 ott 2026 · 15:49 UTC</div><div class="lab">Ultimo aggiornamento dati</div></div>
+      <div class="stat"><div class="num mono" id="statUpdated">6 ott 2026 · 11:31 UTC</div><div class="lab">Ultimo aggiornamento dati</div></div>
     </div>
   </div>
 </section>
@@ -99,14 +101,14 @@
       <div class="overview-head">
         <span class="overview-kicker">01 &middot; Panoramica generale</span>
         <h3>Presales - Panoramica Opportunità (mappa dei filoni)</h3>
-        <span class="overview-updated">Aggiornato 5 ott 2026 · 15:22 UTC</span>
+        <span class="overview-updated">Aggiornato 6 ott 2026 · 10:05 UTC</span>
       </div>
       <div class="opp-body opp-body--open">
         <div class="opp-body-inner prose">
           <h1>Presales — Panoramica Opportunità (canale Teams "Delivery Factory A - PreSales and Opptys - PreSales")</h1>
 <blockquote class="src-note">
 <p>Fonte: file locale (cartella canale Teams sincronizzata via OneDrive, letta da WSL). Rilevamento e mappatura a cura dell'agente <code>teams-channel-agent</code>, tramite scan automatico delle cartelle (<code>scan-opportunities</code>).
-Data rilevamento: 2026-10-05. Snapshot di riferimento: prima baseline (tutte le opportunità e i file risultano "nuovi" al primo scan).</p>
+Data rilevamento: 2026-10-05, ultimo scan con modifiche rilevate 2026-10-06 (business case Milano Ristorazione aggiornato).</p>
 </blockquote>
 <h2 id="come-viene-mantenuta-aggiornata-questa-panoramica">Come viene mantenuta aggiornata questa panoramica</h2>
 <p>L'agente esegue uno scan delle sottocartelle del canale (una per opportunità/commessa) e confronta lo stato attuale con l'ultimo snapshot salvato (<code>output/opportunities_snapshot.json</code>). Ad ogni esecuzione rileva: nuove opportunità comparse, opportunità non più presenti, file nuovi, file modificati, file rimossi. Questo documento e i documenti di dettaglio per singola opportunità vengono aggiornati di conseguenza. Fonte di ogni informazione sempre dichiarata (file locale / OneDrive sync, oppure idea proposta dall'agente).</p>
@@ -135,7 +137,7 @@ Data rilevamento: 2026-10-05. Snapshot di riferimento: prima baseline (tutte le 
 <td>MILANO RISTORAZIONE</td>
 <td>Portale ticketing MVP (famiglie/scuole/operatori) + integrazione Dynamics CRM</td>
 <td>Milano Ristorazione (tramite partner Adesso.it)</td>
-<td>Preparazione meeting tecnico; WBS e stima ROM già definite, go-live target giugno 2027</td>
+<td>Meeting tecnico 06/10; business case formalizzato con prezzo indicativo e review a 10 rilievi (5 Alta priorità, incl. ADR architetturale mancante); go-live target giugno 2027</td>
 <td>4 (md, business case xlsx, 2 pdf)</td>
 <td>presales-miri</td>
 </tr>
@@ -161,7 +163,7 @@ Data rilevamento: 2026-10-05. Snapshot di riferimento: prima baseline (tutte le 
 <h3 id="arpav-integrazione-google-calendar">ARPAV — Integrazione Google Calendar</h3>
 <p>Necessità potenziale: pubblicare su Google Calendar gli eventi gestiti in Prisma (ex SINAP), riducendo doppio inserimento. Perimetro assunto: unidirezionale Prisma → Google, nessuna sincronizzazione inversa né integrazione Outlook/Microsoft in questa fase. Raccomandazione della review esistente: non avviare produzione finché non sono chiariti identità/autorizzazioni, dati trasferiti, modello di calendario (personale vs condiviso) e relazione Prisma/SINAP.</p>
 <h3 id="milano-ristorazione">MILANO RISTORAZIONE</h3>
-<p>MVP di portale ticketing per famiglie, scuole e operatori, con propagazione profilo a Dynamics CRM. Collaborazione a tre: Milano Ristorazione (cliente), Adesso.it (relazione/coordinamento), ENG (architettura, integrazioni, delivery tecnico). WBS con 13 work package; stima ROM 506-911 gg-persona a seconda dello scenario (basso/base/alto), picco ~6,5 FTE a febbraio 2027. In preparazione un meeting tecnico con agenda, dependency matrix, NFR e vertical slice identity-to-CRM.</p>
+<p>MVP di portale ticketing per famiglie, scuole e operatori, con propagazione profilo a Dynamics CRM. Collaborazione a tre: Milano Ristorazione (cliente), Adesso.it (relazione/coordinamento), ENG (architettura, integrazioni, delivery tecnico). WBS con 13 work package; stima ROM 506-911 gg-persona a seconda dello scenario (basso/base/alto), picco ricalcolato ~5,9 FTE a marzo 2027. Il business case ricevuto il 06/10 (stesso giorno del meeting tecnico) formalizza per la prima volta anche costo (~364k€ scenario base) e prezzo indicativo (~485k€), e include una review strutturata che segnala 5 rilievi ad alta priorità — il più critico: nessuna decisione architetturale (ADR) tra alternativa SAP-centrica e Best of Breed, da cui dipendono master data e sizing delle integrazioni.</p>
 <h3 id="star-hotels">STAR HOTELS</h3>
 <p>A seguito di una presentazione INLAY, il cliente ha espresso due esigenze: (1) verificare un flow INLAY su una componente a sua scelta; (2) ricevere una proposta/stima di un assessment enterprise (tecnico + business) su un perimetro ancora da definire dal cliente, usando l'Assessment Estimator, con obiettivo di illustrare il journey, stimare l'assessment, farselo commissionare e produrre entro fine 2026 una timeline e un budget di programma.</p>
 <h3 id="rcs-rizzoli-corriere-della-sera">RCS — Rizzoli Corriere Della Sera</h3>
@@ -191,11 +193,11 @@ Data rilevamento: 2026-10-05. Snapshot di riferimento: prima baseline (tutte le 
     </div>
     <div class="opp-grid">
       
-    <div class="flip-card reveal" style="--accent:#F5A524" data-opp="presales-star-hotels">
+    <div class="flip-card reveal" style="--accent:#B45309" data-opp="presales-star-hotels">
       <div class="flip-card-inner">
         <div class="flip-face flip-face-front">
           <span class="opp-num">01 / OPPORTUNITÀ</span>
-          <span class="opp-status" style="--accent:#F5A524">Fase iniziale</span>
+          <span class="opp-status" style="--accent:#B45309">Fase iniziale</span>
           <div class="opp-title">STAR HOTELS</div>
           <div class="opp-client">Star Hotels</div>
           <p class="opp-summary">PoC di un flow INLAY su una componente ancora da scegliere col cliente, più un assessment enterprise combinato tecnico/business con l'Assessment Estimator.</p>
@@ -207,7 +209,7 @@ Data rilevamento: 2026-10-05. Snapshot di riferimento: prima baseline (tutte le 
           <div class="opp-meta-row">
             <span><b>Macro ambito:</b> PoC flow INLAY + Assessment enterprise Tech & Business</span>
             <span><b>File sorgente:</b> 1</span>
-            <span><b>Aggiornato:</b> 5 ott 2026 · 15:22 UTC</span>
+            <span><b>Aggiornato:</b> 6 ott 2026 · 10:45 UTC</span>
           </div>
           <a class="opp-detail-link" href="opportunita/star-hotels.html">Apri dettaglio completo
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg>
@@ -216,11 +218,11 @@ Data rilevamento: 2026-10-05. Snapshot di riferimento: prima baseline (tutte le 
       </div>
     </div>
 
-    <div class="flip-card reveal" style="--accent:#4ADE80" data-opp="presales-miri">
+    <div class="flip-card reveal" style="--accent:#15803D" data-opp="presales-miri">
       <div class="flip-card-inner">
         <div class="flip-face flip-face-front">
           <span class="opp-num">02 / OPPORTUNITÀ</span>
-          <span class="opp-status" style="--accent:#4ADE80">In preparazione</span>
+          <span class="opp-status" style="--accent:#15803D">In preparazione</span>
           <div class="opp-title">MILANO RISTORAZIONE</div>
           <div class="opp-client">Milano Ristorazione (via Adesso.it)</div>
           <p class="opp-summary">Portale di ticketing MVP per famiglie, scuole e operatori, con propagazione del profilo utente a Dynamics CRM; delivery ENG in partnership con Adesso.it.</p>
@@ -228,11 +230,11 @@ Data rilevamento: 2026-10-05. Snapshot di riferimento: prima baseline (tutte le 
         </div>
         <div class="flip-face flip-face-back">
           <span class="opp-back-label">Richiesta cliente</span>
-          <p class="opp-back-text">Milano Ristorazione necessita di un portale di ticketing rivolto a famiglie, scuole e operatori, con integrazione dei profili utente nel CRM Dynamics esistente. Il progetto è condotto in un…</p>
+          <p class="opp-back-text">Portale ticketing MVP + integrazione Dynamics CRM</p>
           <div class="opp-meta-row">
             <span><b>Macro ambito:</b> Portale ticketing MVP + integrazione Dynamics CRM</span>
             <span><b>File sorgente:</b> 4</span>
-            <span><b>Aggiornato:</b> 5 ott 2026 · 15:49 UTC</span>
+            <span><b>Aggiornato:</b> 6 ott 2026 · 11:31 UTC</span>
           </div>
           <a class="opp-detail-link" href="opportunita/milano-ristorazione.html">Apri dettaglio completo
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg>
@@ -241,11 +243,11 @@ Data rilevamento: 2026-10-05. Snapshot di riferimento: prima baseline (tutte le 
       </div>
     </div>
 
-    <div class="flip-card reveal" style="--accent:#39A7FF" data-opp="presales-arpav">
+    <div class="flip-card reveal" style="--accent:#1D4ED8" data-opp="presales-arpav">
       <div class="flip-card-inner">
         <div class="flip-face flip-face-front">
           <span class="opp-num">03 / OPPORTUNITÀ</span>
-          <span class="opp-status" style="--accent:#39A7FF">Analisi in corso</span>
+          <span class="opp-status" style="--accent:#1D4ED8">Analisi in corso</span>
           <div class="opp-title">ARPAV - Integrazione Google Calendar</div>
           <div class="opp-client">ARPAV</div>
           <p class="opp-summary">Pubblicazione unidirezionale degli eventi da Prisma verso Google Calendar, per ridurre la duplicazione di inserimento e migliorare la visibilità per gli enti.</p>
@@ -257,7 +259,7 @@ Data rilevamento: 2026-10-05. Snapshot di riferimento: prima baseline (tutte le 
           <div class="opp-meta-row">
             <span><b>Macro ambito:</b> Integrazione calendari esterni (Prisma/SINAP → Google Calendar)</span>
             <span><b>File sorgente:</b> 3</span>
-            <span><b>Aggiornato:</b> 5 ott 2026 · 15:22 UTC</span>
+            <span><b>Aggiornato:</b> 6 ott 2026 · 10:45 UTC</span>
           </div>
           <a class="opp-detail-link" href="opportunita/arpav.html">Apri dettaglio completo
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg>
@@ -266,11 +268,11 @@ Data rilevamento: 2026-10-05. Snapshot di riferimento: prima baseline (tutte le 
       </div>
     </div>
 
-    <div class="flip-card reveal" style="--accent:#5F7290" data-opp="presales-rcs">
+    <div class="flip-card reveal" style="--accent:#475569" data-opp="presales-rcs">
       <div class="flip-card-inner">
         <div class="flip-face flip-face-front">
           <span class="opp-num">04 / OPPORTUNITÀ</span>
-          <span class="opp-status" style="--accent:#5F7290">Nessuna info</span>
+          <span class="opp-status" style="--accent:#475569">Nessuna info</span>
           <div class="opp-title">RCS - Rizzoli Corriere Della Sera</div>
           <div class="opp-client">RCS</div>
           <p class="opp-summary">Cartella dell'opportunità ancora vuota: nessun materiale caricato nel canale, perimetro e richiesta cliente non ricostruibili al momento.</p>
@@ -297,7 +299,7 @@ Data rilevamento: 2026-10-05. Snapshot di riferimento: prima baseline (tutte le 
 <footer>
   <div class="wrap">
     <div><strong>PreSales Opportunity</strong> — generata da <code>teams-channel-agent</code>, dati da DocMind (progetto PreSales).</div>
-    <div>Ultima rigenerazione pagina: 5 ott 2026 · 15:49 UTC</div>
+    <div>Ultima rigenerazione pagina: 6 ott 2026 · 11:59 UTC</div>
   </div>
 </footer>
 

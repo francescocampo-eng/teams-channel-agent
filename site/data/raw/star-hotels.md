@@ -1,6 +1,6 @@
 # Presales — Dettaglio Opportunità: STAR HOTELS
 
-> Fonte dati: file locale canale Teams (OneDrive sync). Documento sorgente: `summary.txt` (nota sintetica, 6 righe). Sezione "Idee proposte dall'agente" in fondo: contenuto generato, non proveniente dal cliente.
+> Fonte dati: file locale canale Teams (OneDrive sync). Documento sorgente: [summary.txt](https://engit.sharepoint.com/:t:/r/sites/DeliveryFactoryA-PreSalesandOpptys/Documenti%20condivisi/PreSales/STAR%20HOTELS/summary.txt?d=we208c200da614d7c9973afdcffe1358a&csf=1&web=1&e=d5nFEd) (nota sintetica, 6 righe). Sezione "Idee proposte dall'agente" in fondo: contenuto generato, non proveniente dal cliente.
 
 ## Contesto: cos'è INLAY (verificato dalla documentazione ufficiale)
 

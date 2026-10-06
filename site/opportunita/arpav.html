@@ -24,6 +24,8 @@
       <a href="../index.html#come-funziona">Come funziona</a>
       <a href="../index.html#panoramica">Panoramica</a>
       <a href="../index.html#opportunita">Opportunità</a>
+      <a href="../calendario.html">Calendario</a>
+      <a href="../riepilogo.html">Riepilogo iniziative</a>
       <a href="../index.html#opportunita" class="nav-cta">&larr; Tutte le opportunità</a>
     </nav>
   </div>
@@ -32,13 +34,13 @@
 <section class="detail-hero">
   <div class="wrap">
     <div class="breadcrumb"><a href="../index.html#opportunita">Opportunità</a> <span>/</span> <span>ARPAV - Integrazione Google Calendar</span></div>
-    <span class="opp-status" style="--accent:#39A7FF">Analisi in corso</span>
+    <span class="opp-status" style="--accent:#1D4ED8">Analisi in corso</span>
     <h1>ARPAV - Integrazione Google Calendar</h1>
     <div class="opp-client">ARPAV</div>
     <div class="detail-meta">
       <span><b>Macro ambito:</b> Integrazione calendari esterni (Prisma/SINAP → Google Calendar)</span>
       <span><b>File sorgente:</b> 3</span>
-      <span><b>Aggiornato:</b> 5 ott 2026 · 15:22 UTC</span>
+      <span><b>Aggiornato:</b> 6 ott 2026 · 10:45 UTC</span>
     </div>
   </div>
 </section>
@@ -53,10 +55,33 @@
 <a href="#idee-proposte-dallagente" class="">Idee proposte dall'agente</a>
     </aside>
     <div class="detail-content">
+      
+    <div class="dashboard-card reveal">
+      <div class="dashboard-head">
+        <span class="section-label">Dashboard stato — a cura di Ciro</span>
+        <span class="dash-stato-badge" style="--accent:#1D4ED8">Analisi</span>
+      </div>
+      <div class="dashboard-meta">
+        
+        <span class="dash-waiting"><b>In attesa di:</b> esito workshop P0 (identità/autorizzazioni, privacy/costi)</span>
+      </div>
+      <ol class="htimeline">
+        
+        <li class="htimeline-item htimeline-stato" style="--accent:#1D4ED8">
+          <span class="htimeline-date">2 ott 2026</span>
+          <span class="htimeline-dot">&#9679;</span>
+          <span class="htimeline-stato" style="--accent:#1D4ED8">Analisi</span>
+          <div class="htimeline-body">
+            <p class="htimeline-nota">Review esistente su connessione a calendari esterni (Google Calendar/Outlook) ricevuta dal canale.</p>
+            
+          </div>
+        </li>
+      </ol>
+    </div>
       <div class="prose">
         <h1>Presales — Dettaglio Opportunità: ARPAV - Integrazione Google Calendar</h1>
 <blockquote class="src-note">
-<p>Fonte dati: file locale canale Teams (OneDrive sync). Documento sorgente originale: <code>Review-opportunita-calendari-esterni-SINAP.md</code> (review del 2 ottobre 2026, basata sul corpo testuale di una email del 1 ottobre 2026; un PDF Outlook allegato non è stato estratto). Sezione "Idee proposte dall'agente" in fondo: contenuto generato, non proveniente dal cliente.</p>
+<p>Fonte dati: file locale canale Teams (OneDrive sync). Documento sorgente originale: <a href="https://engit.sharepoint.com/:t:/r/sites/DeliveryFactoryA-PreSalesandOpptys/Documenti%20condivisi/PreSales/ARPAV%20-%20Integrazione%20Google%20Calendar/Review-opportunita-calendari-esterni-SINAP.md?d=w54d6b90e830242febc89a64b93a76cdb&amp;csf=1&amp;web=1&amp;e=rz5eBX">Review-opportunita-calendari-esterni-SINAP.md</a> (review del 2 ottobre 2026, basata sul corpo testuale di una email del 1 ottobre 2026; un <a href="https://engit.sharepoint.com/:b:/r/sites/DeliveryFactoryA-PreSalesandOpptys/Documenti%20condivisi/PreSales/ARPAV%20-%20Integrazione%20Google%20Calendar/%5BARPAV%5D%5BCheckAP_exSINAP%5D%20-%20analisi%20su%20c...outlook">PDF Outlook allegato</a>%20-%20Domenico%20La%20Rocca%20-%20Outlook.pdf?d=w528e1378ab434ad5b23b36b59b8d22e8&amp;csf=1&amp;web=1&amp;e=S3qHBe) (e la relativa <a href="https://engit.sharepoint.com/:u:/r/sites/DeliveryFactoryA-PreSalesandOpptys/Documenti%20condivisi/PreSales/ARPAV%20-%20Integrazione%20Google%20Calendar/%5BARPAV%5D%5BCheckAP_exSINAP%5D%20-%20analisi%20su%20connessione%20a%20calendari%20esterni%20(google%20calendar%20e_o%20outlook).eml?d=w0a14bdf60a1e490493eb32dcbf31eaf9&amp;csf=1&amp;web=1&amp;e=471zLl">email originale .eml</a>) non è stato estratto). Sezione "Idee proposte dall'agente" in fondo: contenuto generato, non proveniente dal cliente.</p>
 </blockquote>
 <h2 id="perimetro-e-scopo">Perimetro e scopo</h2>
 <p>Pubblicazione <strong>unidirezionale</strong> degli eventi da <strong>Prisma verso Google Calendar</strong>: le modifiche originate in Prisma possono essere pubblicate su Google; le modifiche fatte direttamente in Google non vengono riportate in Prisma. Fuori perimetro in questa fase: integrazione Outlook/Microsoft, sincronizzazione Google → Prisma o bidirezionale.</p>
@@ -96,7 +121,7 @@
 <footer>
   <div class="wrap">
     <div><strong>PreSales Opportunity</strong> — generata da <code>teams-channel-agent</code>, dati da DocMind (progetto PreSales).</div>
-    <div>Ultima rigenerazione pagina: 5 ott 2026 · 15:49 UTC</div>
+    <div>Ultima rigenerazione pagina: 6 ott 2026 · 11:59 UTC</div>
   </div>
 </footer>
 
@@ -109,6 +134,12 @@ function onScroll(){
 }
 document.addEventListener('scroll', onScroll, {passive:true});
 onScroll();
+
+// reveal on scroll
+const ioReveal = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); ioReveal.unobserve(e.target);} });
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>ioReveal.observe(el));
 
 // evidenzia la voce di TOC attiva durante lo scroll
 const headings = Array.from(document.querySelectorAll('.detail-content [id]'));

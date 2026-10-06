@@ -24,6 +24,8 @@
       <a href="../index.html#come-funziona">Come funziona</a>
       <a href="../index.html#panoramica">Panoramica</a>
       <a href="../index.html#opportunita">Opportunità</a>
+      <a href="../calendario.html">Calendario</a>
+      <a href="../riepilogo.html">Riepilogo iniziative</a>
       <a href="../index.html#opportunita" class="nav-cta">&larr; Tutte le opportunità</a>
     </nav>
   </div>
@@ -32,13 +34,13 @@
 <section class="detail-hero">
   <div class="wrap">
     <div class="breadcrumb"><a href="../index.html#opportunita">Opportunità</a> <span>/</span> <span>MILANO RISTORAZIONE</span></div>
-    <span class="opp-status" style="--accent:#4ADE80">In preparazione</span>
+    <span class="opp-status" style="--accent:#15803D">In preparazione</span>
     <h1>MILANO RISTORAZIONE</h1>
     <div class="opp-client">Milano Ristorazione (via Adesso.it)</div>
     <div class="detail-meta">
       <span><b>Macro ambito:</b> Portale ticketing MVP + integrazione Dynamics CRM</span>
       <span><b>File sorgente:</b> 4</span>
-      <span><b>Aggiornato:</b> 5 ott 2026 · 15:49 UTC</span>
+      <span><b>Aggiornato:</b> 6 ott 2026 · 11:31 UTC</span>
     </div>
   </div>
 </section>
@@ -47,9 +49,22 @@
   <div class="wrap detail-layout">
     <aside class="detail-toc">
       <span class="detail-toc-label">In questa pagina</span>
-      <a href="#perimetro-e-scopo" class="">Perimetro e scopo</a>
-<a href="#richiesta-cliente" class="">Richiesta cliente</a>
+      <a href="#sintesi-del-documento-sorgente-assessment-architetturale-as-is-e-alternative-to-be-adessoit" class="">Sintesi del documento sorgente: Assessment Architetturale As-Is e Alternative To-Be (Adesso.it)</a>
+<a href="#processi-as-is-sintesi" class="toc-h3">Processi As-Is (sintesi)</a>
+<a href="#architettura-as-is-e-criticità" class="toc-h3">Architettura As-Is e criticità</a>
+<a href="#requisiti-e-principi-guida-per-levoluzione" class="toc-h3">Requisiti e principi guida per l'evoluzione</a>
+<a href="#alternativa-to-be-sap-centrica" class="toc-h3">Alternativa To-Be "SAP Centrica"</a>
+<a href="#alternativa-to-be-best-of-breed" class="toc-h3">Alternativa To-Be "Best of Breed"</a>
+<a href="#elementi-comuni-e-conclusione" class="toc-h3">Elementi comuni e conclusione</a>
+<a href="#il-quadro-dellopportunità" class="">Il quadro dell'opportunità</a>
+<a href="#mvp-ticketing-fase-1-perimetro" class="">MVP Ticketing (Fase 1) — perimetro</a>
 <a href="#stato" class="">Stato</a>
+<a href="#bozza-stima-ai-assisted-ipotesi-interna-eng-non-ancora-validata" class="toc-h3">Bozza stima AI-assisted (ipotesi interna ENG, non ancora validata)</a>
+<a href="#business-case-aggiornato-06102026-lettura-del-file-businesscasemvpticketingmirixlsx" class="">Business case aggiornato (06/10/2026) — lettura del file Business_Case_MVP_Ticketing_MiRi.xlsx</a>
+<a href="#indicatori-economici-nuovi-prima-non-calcolati" class="toc-h3">Indicatori economici (nuovi — prima non calcolati)</a>
+<a href="#rilievi-della-review-10-già-incorporati-nel-foglio-review-del-business-case" class="toc-h3">Rilievi della review (10, già incorporati nel foglio "Review" del business case)</a>
+<a href="#matrice-di-copertura-12-requisiti-as-isto-be-vs-perimetro-mvp" class="toc-h3">Matrice di copertura (12 requisiti AS-IS/TO-BE vs perimetro MVP)</a>
+<a href="#cross-check-indipendente-metodo-fpengenius-skill-impact-engenius" class="toc-h3">Cross-check indipendente (metodo FP/ENGenius, skill impact + engenius)</a>
 <a href="#preparazione-meeting-con-adessoit-06102026" class="">Preparazione meeting con Adesso.it (06/10/2026)</a>
 <a href="#domande-per-adessoit" class="toc-h3">Domande per Adesso.it</a>
 <a href="#punti-aperti-da-validare-per-area" class="toc-h3">Punti aperti da validare (per area)</a>
@@ -57,27 +72,131 @@
 <a href="#ipotesi-di-nostro-scope-eng" class="toc-h3">Ipotesi di nostro scope (ENG)</a>
 <a href="#bozza-stima-effort-elapsed-fte" class="toc-h3">Bozza stima effort / elapsed / FTE</a>
 <a href="#rischi-e-assunzioni" class="toc-h3">Rischi e assunzioni</a>
-<a href="#idee-proposte-dallagente" class="">Idee proposte dall'agente</a>
+<a href="#idee-proposte-dallagente-decisioni-interne-eng-pre-meeting" class="">Idee proposte dall'agente — decisioni interne ENG (pre-meeting)</a>
     </aside>
     <div class="detail-content">
+      
+    <div class="dashboard-card reveal">
+      <div class="dashboard-head">
+        <span class="section-label">Dashboard stato — a cura di Ciro</span>
+        <span class="dash-stato-badge" style="--accent:#B45309">Proposta in preparazione</span>
+      </div>
+      <div class="dashboard-meta">
+        <span class="dash-deadline"><b>Prossima scadenza:</b> 6 ott 2026 — Incontro tecnico con Adesso.it</span>
+        <span class="dash-waiting"><b>In attesa di:</b> esito meeting del 6/10 con Adesso.it (RACI, volumi, escalation plan); decisione architetturale ADR SAP-centrica vs Best of Breed</span>
+      </div>
+      <ol class="htimeline">
+        
+        <li class="htimeline-item htimeline-stato" style="--accent:#1D4ED8">
+          <span class="htimeline-date">2 ott 2026</span>
+          <span class="htimeline-dot">&#9679;</span>
+          <span class="htimeline-stato" style="--accent:#1D4ED8">Analisi</span>
+          <div class="htimeline-body">
+            <p class="htimeline-nota">Ricevuti business case e WBS iniziali (13 work package), stima ROM 506-911 gg-persona a seconda dello scenario.</p>
+            <div class="economics-row"><span class="economics-chip"><b>Stima ROM min (gg-persona):</b> 506</span><span class="economics-chip"><b>Stima ROM max (gg-persona):</b> 911</span><span class="economics-chip"><b>Picco FTE:</b> 6.5</span></div>
+          </div>
+        </li>
+
+        <li class="htimeline-item htimeline-stato" style="--accent:#B45309">
+          <span class="htimeline-date">5 ott 2026</span>
+          <span class="htimeline-dot">&#9679;</span>
+          <span class="htimeline-stato" style="--accent:#B45309">Proposta in preparazione</span>
+          <div class="htimeline-body">
+            <p class="htimeline-nota">Perimetro stima chiarito (solo ENG, non globale con Adesso.it); FP sizing cross-check indipendente: 44 FP ≈ 44 gg-persona. Preparate bozza volumi/profilo ed escalation plan da proporre al meeting del 6/10.</p>
+            <div class="economics-row"><span class="economics-chip"><b>FP sizing (gg-persona):</b> 44</span></div>
+          </div>
+        </li>
+
+        <li class="htimeline-item htimeline-stato" style="--accent:#B45309">
+          <span class="htimeline-date">6 ott 2026</span>
+          <span class="htimeline-dot">&#9679;</span>
+          <span class="htimeline-stato" style="--accent:#B45309">Proposta in preparazione</span>
+          <div class="htimeline-body">
+            <p class="htimeline-nota">Business_Case aggiornato: WBS invariata (633 gg base), ora con fogli Review (10 rilievi, 5 Alta priorità) e Copertura (12 requisiti AS-IS/TO-BE, nessuno 'Completo'). Prezzo indicativo esplicitato. Picco FTE ricalcolato: 5,9 a marzo 2027 (prima 6,5 a febbraio), per redistribuzione lineare sui 13 WP, non per cambio perimetro.</p>
+            <div class="economics-row"><span class="economics-chip"><b>effort_wbs_base_gg_persona:</b> 633</span><span class="economics-chip"><b>effort_con_riserva_low_gg_persona:</b> 582</span><span class="economics-chip"><b>effort_con_riserva_base_gg_persona:</b> 728</span><span class="economics-chip"><b>effort_con_riserva_high_gg_persona:</b> 910</span><span class="economics-chip"><b>costo_team_low_eur:</b> 291180</span><span class="economics-chip"><b>costo_team_base_eur:</b> 363975</span><span class="economics-chip"><b>costo_team_high_eur:</b> 454970</span><span class="economics-chip"><b>prezzo_indicativo_low_eur:</b> 388240</span><span class="economics-chip"><b>prezzo_indicativo_base_eur:</b> 485300</span><span class="economics-chip"><b>prezzo_indicativo_high_eur:</b> 606627</span><span class="economics-chip"><b>picco_fte_ricalcolato:</b> 5.9</span><span class="economics-chip"><b>parametri:</b> {'costo_giorno_eur': 500, 'margine_pct': 0.25, 'riserva_pct': 0.15}</span></div>
+          </div>
+        </li>
+
+        <li class="htimeline-item htimeline-impegno" style="--accent:#1D4ED8">
+          <span class="htimeline-date">6 ott 2026</span>
+          <span class="htimeline-dot">&#9650;</span>
+          <span class="htimeline-stato" style="--accent:#1D4ED8">Meeting</span>
+          <div class="htimeline-body">
+            <p class="htimeline-nota">Incontro tecnico con Adesso.it — Fase 1 MVP Ticketing (Milano Ristorazione)</p>
+            
+          </div>
+        </li>
+
+        <li class="htimeline-item htimeline-impegno" style="--accent:#6D28D9">
+          <span class="htimeline-date">30 giu 2027</span>
+          <span class="htimeline-dot">&#9650;</span>
+          <span class="htimeline-stato" style="--accent:#6D28D9">Milestone</span>
+          <div class="htimeline-body">
+            <p class="htimeline-nota">Go-live target Fase 1 — primo step validato, MVP Ticketing (non ancora vincolante — gate su volumi/NFR/identity-Dynamics)</p>
+            
+          </div>
+        </li>
+      </ol>
+    </div>
       <div class="prose">
         <h1>Presales — Dettaglio Opportunità: MILANO RISTORAZIONE</h1>
 <blockquote class="src-note">
-<p>Fonte dati: file locale canale Teams (OneDrive sync). Documento sorgente principale: <code>TODO_Meeting_Tecnico_Adesso_MiRi.md</code> (checklist preparazione meeting tecnico con Adesso.it), più <code>Business_Case_MVP_Ticketing_MiRi.xlsx</code> e 2 PDF (analisi As-Is/To-Be, ticketing). Sezione "Idee proposte dall'agente" in fondo: contenuto generato, non proveniente dal cliente.</p>
+<p>Fonte dati: file locale canale Teams (OneDrive sync). Documento sorgente principale: <a href="https://engit.sharepoint.com/:t:/r/sites/DeliveryFactoryA-PreSalesandOpptys/Documenti%20condivisi/PreSales/MILANO%20RISTORAZIONE/TODO_Meeting_Tecnico_Adesso_MiRi.md?d=we1db0013e35141869995806b274c8a57&amp;csf=1&amp;web=1&amp;e=RuONok">TODO_Meeting_Tecnico_Adesso_MiRi.md</a> (checklist preparazione meeting tecnico con Adesso.it), più <a href="https://engit.sharepoint.com/:x:/r/sites/DeliveryFactoryA-PreSalesandOpptys/Documenti%20condivisi/PreSales/MILANO%20RISTORAZIONE/Business_Case_MVP_Ticketing_MiRi.xlsx?d=wac54b5c193334971bea8704b440b0215&amp;csf=1&amp;web=1&amp;e=fYRpi8">Business_Case_MVP_Ticketing_MiRi.xlsx</a> (aggiornato il 06/10/2026, lo stesso giorno del meeting) e 2 PDF: <a href="https://engit.sharepoint.com/:b:/r/sites/DeliveryFactoryA-PreSalesandOpptys/Documenti%20condivisi/PreSales/MILANO%20RISTORAZIONE/MiRi%20Deliverable%20Analisi%20As%20Is%20-%20Soluzione%20To%20Be_ENG.pdf?d=w5f568b0e22b049758ae9b666680cb320&amp;csf=1&amp;web=1&amp;e=UtkHDn">analisi As-Is/To-Be</a>, <a href="https://engit.sharepoint.com/:b:/r/sites/DeliveryFactoryA-PreSalesandOpptys/Documenti%20condivisi/PreSales/MILANO%20RISTORAZIONE/Ticketing_Milano_Ristorazione_Eng.pdf?d=w01e4af2553df43f086b5468f0863f685&amp;csf=1&amp;web=1&amp;e=xpl6st">ticketing</a>. Sezione "Idee proposte dall'agente" in fondo: contenuto generato, non proveniente dal cliente.</p>
 </blockquote>
-<h2 id="perimetro-e-scopo">Perimetro e scopo</h2>
-<p><strong>MVP Ticketing</strong> per Milano Ristorazione, in collaborazione con il partner Adesso.it:
-- login/registrazione utenti;
-- lista e dettaglio ticket;
-- apertura e risposta ticket;
-- stato ticket;
-- propagazione del profilo utente a <strong>Dynamics CRM</strong>.</p>
-<p><strong>Esplicitamente escluso dal perimetro MVP:</strong> rette, iscrizioni, presenze, diete, pagamenti, CMS completo; migrazione/decommissioning non ancora definiti.</p>
-<h2 id="richiesta-cliente">Richiesta cliente</h2>
-<p>Milano Ristorazione necessita di un portale di ticketing rivolto a famiglie, scuole e operatori, con integrazione dei profili utente nel CRM Dynamics esistente. Il progetto è condotto in un modello a tre attori: <strong>Milano Ristorazione</strong> (cliente, sponsor/owner di business e IT), <strong>Adesso.it</strong> (presidio relazione e coordinamento con il cliente), <strong>ENG</strong> (architettura, integrazioni, delivery tecnico). È in preparazione un <strong>meeting tecnico con Adesso.it</strong> per allineare perimetro MVP, domande tecniche, stima preliminare di effort e modello organizzativo.</p>
+<h2 id="sintesi-del-documento-sorgente-assessment-architetturale-as-is-e-alternative-to-be-adessoit">Sintesi del documento sorgente: Assessment Architetturale As-Is e Alternative To-Be (Adesso.it)</h2>
+<p><em>Sintesi condensata del documento "MiRi Deliverable Analisi As-Is - Soluzione To-Be" (42 pagine). Documento completo linkato in testa alla pagina.</em></p>
+<p><strong>Obiettivo del documento:</strong> ricostruire i processi e l'architettura As-Is, evidenziarne criticità, definire requisiti/principi guida per l'evoluzione e descrivere due alternative To-Be (<strong>SAP Centrica</strong> e <strong>Best of Breed</strong>). Non entra nel dettaglio esecutivo né nella roadmap: quella è uno step successivo.</p>
+<h3 id="processi-as-is-sintesi">Processi As-Is (sintesi)</h3>
+<ul>
+<li><strong>Accesso</strong>: SPID/CIE + doppia verifica email/telefono.</li>
+<li><strong>Iscrizione</strong> (portale eCivis): CSV dal Comune per precompilare anagrafiche; tariffe agevolate via scambio dati ISEE con il Comune (fino a update diretto a DB).</li>
+<li><strong>Diete</strong> (SAP BTP): processo ancora cartaceo, approvazione separata (Ufficio Diete / Centro Cucine), censimento manuale in SAP.</li>
+<li><strong>Prenotazione pasti</strong> (SAP BTP): basata su presenze + menu + diete; diete leggere gestite senza vero salvataggio strutturato; pasti preparati <strong>prima</strong> delle prenotazioni definitive, su stime.</li>
+<li><strong>Pagamenti</strong>: Gestionale Rette → partner esterno → PagoPA/IUV → comunicazioni a famiglie → XML SDD/RID in DocFinance.</li>
+<li><strong>Commissari mensa</strong>: candidatura via eCivis (tutori) o SAP BTP (docenti), approvazione scuola, P-user SAP.</li>
+</ul>
+<h3 id="architettura-as-is-e-criticità">Architettura As-Is e criticità</h3>
+<p>Sistemi eterogenei nati per esigenze puntuali: 5 portali indipendenti (Rette, Presenze, Diete, Commissioni Mensa, Istituzionale/App), 3 sistemi di back-office (Gestionale Rette/eCivis, SAP ERP, Qlik View), sistemi di caring frammentati (CRM Dynamics, call center, Ufirst), integrazioni esterne perlopiù manuali/punto-punto (Comune, PagoPA, banche).</p>
+<p><strong>Criticità principale: nessuna Single Source of Truth anagrafica.</strong> L'anagrafica più affidabile è quella del Gestionale Rette, ma diete e SAP introducono dati duplicati e non riconciliati → rallentamenti, errori, impossibilità di vista integrata sul cittadino.</p>
+<p>Altre criticità: UX frammentata su più portali, processi parzialmente manuali (modulistica cartacea, file-based), integrazioni deboli punto-punto, silos applicativi, capacità di analisi/insight limitata.</p>
+<p><img alt="Architettura As-Is: portali, sistemi di back-office e flussi dati (entità in verde = sistema master, in grigio = copia/lettura)" src="../assets/docs/milano-ristorazione/page-14.png" />
+<em>Architettura As-Is: portali, sistemi di back-office e flussi dati (verde = master, grigio = copia/lettura)</em></p>
+<h3 id="requisiti-e-principi-guida-per-levoluzione">Requisiti e principi guida per l'evoluzione</h3>
+<p>Entry point unico, vista integrata dei servizi, riduzione attività manuali, allineamento automatico con enti esterni, modello dati condiviso con master espliciti, eliminazione ridondanze. Principi: modularità, scalabilità, data-centricity, automazione — con forte enfasi su <strong>modello dati e ownership</strong>, non solo applicazioni.</p>
+<h3 id="alternativa-to-be-sap-centrica">Alternativa To-Be "SAP Centrica"</h3>
+<p><strong>SAP</strong> diventa il sistema master per anagrafiche, iscrizioni, rette, pagamenti, diete e ordini; i portali diventano front-end puri; CRM resta per ticket/booking; CMS per i contenuti; un <strong>Integration Layer</strong> elimina le integrazioni punto-punto. Sostituisce completamente Gestionale Rette e Portale Rette eCivis. Autenticazione: SPID/CIE (utenti), Azure SSO (scuole/Comune), SAP SSO (operatori interni).</p>
+<p><img alt="Figura 1 — Alternativa To-Be &quot;SAP Centrica&quot;: componenti logici" src="../assets/docs/milano-ristorazione/page-20.png" />
+<em>Figura 1 — Alternativa "SAP Centrica": componenti logici</em></p>
+<p><img alt="SAP Centrica — flusso dati del processo di iscrizione e calcolo rette" src="../assets/docs/milano-ristorazione/page-25.png" />
+<em>SAP Centrica — flusso dati: iscrizione e calcolo rette</em></p>
+<h3 id="alternativa-to-be-best-of-breed">Alternativa To-Be "Best of Breed"</h3>
+<p>Introduce un nuovo microservizio <strong>Servizio Rette</strong> (master del dominio amministrativo: iscrizioni, rette, pagamenti, parte amministrativa diete) e un <strong>Servizio Presenze</strong> (master delle presenze); <strong>SAP</strong> resta solo per il dominio operativo/produttivo (ordini, cucina, logistica). Stessa impostazione di portali/autenticazione della prima alternativa, ma dominio più modulare: microservizi indipendenti, rilasci separati, minor customizzazione SAP.</p>
+<p><img alt="Figura 2 — Alternativa To-Be &quot;Best of Breed&quot;: componenti logici" src="../assets/docs/milano-ristorazione/page-30.png" />
+<em>Figura 2 — Alternativa "Best of Breed": componenti logici</em></p>
+<p><img alt="Best of Breed — flusso dati del processo di iscrizione e calcolo rette" src="../assets/docs/milano-ristorazione/page-36.png" />
+<em>Best of Breed — flusso dati: iscrizione e calcolo rette</em></p>
+<h3 id="elementi-comuni-e-conclusione">Elementi comuni e conclusione</h3>
+<p>Entrambe le alternative condividono: Portale Utente unico, Portale Scuola, Portale Istituzionale su headless CMS, App Mobile via API, Integration Layer come dorsale di orchestrazione verso Comune/PagoPA/banche/ANPR. Principio comune: <strong>nessun sistema interno si integra direttamente con l'esterno</strong>, tutto passa dal layer di integrazione.</p>
+<p>Questo documento inquadra l'<strong>MVP Ticketing</strong> dentro uno scenario molto più ampio: il ticketing è solo il primo passo; il valore di medio periodo dipende dalla capacità di ricomporre portali, domini e flussi dati attorno a un'architettura target coerente e governabile.</p>
+<h2 id="il-quadro-dellopportunità">Il quadro dell'opportunità</h2>
+<p>Milano Ristorazione (MiRi) ha avviato, con il partner Adesso.it, un percorso di modernizzazione dell'intero ecosistema applicativo a supporto dei servizi erogati a famiglie, scuole ed enti: rette, iscrizioni, diete, presenze, pagamenti, commissari mensa. È la trasformazione digitale descritta nella sintesi del documento As-Is/To-Be in cima a questa pagina — un perimetro ampio, con due alternative architetturali ancora da decidere (SAP Centrica vs Best of Breed).</p>
+<p>Dentro questo quadro complessivo, il <strong>primo step validato</strong> della trasformazione — concordato con Adesso.it come terreno su cui ENG dimostra execution, qualità e metodo sul campo, prima di sbloccare le fasi successive — è il <strong>portale di ticketing MVP</strong>: un ambito circoscritto rivolto a famiglie, scuole e operatori, con integrazione dei profili utente nel CRM Dynamics esistente.</p>
+<p>Il progetto è condotto in un modello a tre attori: <strong>Milano Ristorazione</strong> (cliente, sponsor/owner di business e IT), <strong>Adesso.it</strong> (presidio relazione e coordinamento con il cliente), <strong>ENG</strong> (architettura, integrazioni, delivery tecnico). È in preparazione un <strong>meeting tecnico con Adesso.it</strong> per allineare perimetro MVP, domande tecniche, stima preliminare di effort e modello organizzativo.</p>
+<h2 id="mvp-ticketing-fase-1-perimetro">MVP Ticketing (Fase 1) — perimetro</h2>
+<ul>
+<li>login/registrazione utenti;</li>
+<li>lista e dettaglio ticket;</li>
+<li>apertura e risposta ticket;</li>
+<li>stato ticket;</li>
+<li>propagazione del profilo utente a <strong>Dynamics CRM</strong>.</li>
+</ul>
+<p><strong>Non ancora in perimetro in questa fase (fasi successive da sbloccare dopo questo primo step):</strong> rette, iscrizioni, presenze, diete, pagamenti, CMS completo; migrazione/decommissioning non ancora definiti.</p>
 <h2 id="stato">Stato</h2>
 <p><strong>Fase:</strong> preparazione meeting tecnico (checklist non ancora completata). WBS e stima ROM già elaborate come baseline di lavoro, <strong>non ancora una stima contrattuale</strong>.</p>
 <p><strong>WBS e stima (13 work package MVP):</strong> baseline avvio ottobre 2026, go-live target <strong>giugno 2027</strong>.</p>
+<blockquote class="src-note">
+<p><strong>Perimetro della stima:</strong> riferita al solo effort di delivery <strong>ENG</strong> (tutti i 13 work package hanno ruolo lead e costo giornaliero del team interno ENG). Non include l'effort di coordinamento/relazione verso il cliente svolto da Adesso.it.</p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -108,25 +227,134 @@
 </tr>
 </tbody>
 </table>
-<p>Picco stimato: <strong>~6,5 FTE a febbraio 2027</strong> (riserva inclusa). Composizione principale: Portale/ticketing (115 gg), API Gateway/bus/listener CRM (96 gg), Identity/onboarding (58 gg), Governance/PMO (55 gg), Configurazione Dynamics (32 gg), Test integrati (64 gg), UAT/formazione (24 gg), Cutover/hypercare (21 gg), tra gli altri.</p>
+<p>Picco stimato: <strong>~6,5 FTE a febbraio 2027</strong> (riserva inclusa) nella baseline del 02/10; ricalcolo del 06/10 sul business case aggiornato: <strong>~5,9 FTE a marzo 2027</strong> (vedi sezione "Business case aggiornato" più sotto per il dettaglio del ricalcolo).</p>
+<p>Composizione principale: Portale/ticketing (115 gg), API Gateway/bus/listener CRM (96 gg), Identity/onboarding (58 gg), Governance/PMO (55 gg), Configurazione Dynamics (32 gg), Test integrati (64 gg), UAT/formazione (24 gg), Avvio in produzione/assistenza post avvio (21 gg), tra gli altri.</p>
+<p><strong>Cross-check indipendente (Function Point, IFPUG):</strong> sizing rapido delle 5 capability core (profilo utente, ticket, propagazione CRM) → <strong>44 FP</strong>, equivalenti a <strong>~44 gg-persona di solo sviluppo funzionale</strong> a velocità team media (8h/FP). Coerente come ordine di grandezza con la quota di puro coding dei WP 1.6/1.8/1.9 (Portale+API Gateway+Config Dynamics, 243 gg totali, di cui test/integrazione/non-funzionali sono la parte restante). <em>Conteggio basato su DET/RET assunti, da validare con requisiti definitivi — non sostituisce la WBS.</em></p>
 <p><strong>Assunzioni della stima:</strong> disponibilità tempestiva di ambienti/API/referenti cliente, nessuna migrazione dati, perimetro Dynamics limitato al flusso MVP. Ritardi su collegamento identità-Dynamics o dipendenze esterne possono spostare effort e calendario.</p>
 <p><strong>Dati ancora mancanti (da richiedere al cliente prima di una stima vincolante):</strong> utenti potenziali per categoria, volumi ticket attuali e stagionalità, picchi di accesso concorrenti, percentuale ticket con allegati, SLA attesi, sistemi sorgente/API/limiti (CRM, SPID/CIE, identità B2C, API Gateway), regole di identity matching, vincoli privacy/DPIA/accessibilità, data di scadenza licenze attuali.</p>
 <p><strong>Modello organizzativo proposto (da formalizzare in RACI):</strong> governance tripartita su 6 livelli (sponsor/priorità, steering, coordinamento quotidiano, architettura/integrazioni, prodotto/processi, esercizio), con ruoli e accountable distinti per Milano Ristorazione, Adesso.it, ENG.</p>
 <p><strong>Gate consigliato (da fonte originale):</strong> non impegnare prezzo e data di go-live come baseline vincolante finché non sono verificati volumi, requisiti operativi, collegamento identità-Dynamics, disponibilità integrazioni e opzione di proroga licenze.</p>
+<h3 id="bozza-stima-ai-assisted-ipotesi-interna-eng-non-ancora-validata">Bozza stima AI-assisted (ipotesi interna ENG, non ancora validata)</h3>
+<p>La WBS sopra è fatta con metodo tradizionale: non tiene conto che la metodologia di delivery ENG è nativamente AI-assistita lungo tutta la catena (analisi e requisiti elaborati con AI, documentazione e mockup navigabili generati con AI per validare interfaccia e funzionalità, traduzione verso l'architettura target assistita da AI, manuali e guide di configurazione generati da AI), non solo nello sviluppo.</p>
+<p><strong>Ipotesi (da validare sul campo, non misurate):</strong> l'uso di AI riduce l'effort di circa il 30% sul ~90% del totale WBS (non solo i WP a più alto contenuto di codice). Il consumo di token è stimato in ~2,2M token per gg-persona AI-intensiva, calibrato sul benchmark reale dell'utente (~120 €/mese di utilizzo personale a 4h/giorno, Claude Sonnet via GitHub Copilot).</p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th style="text-align: right;">Effort AI-adjusted (pre-riserva)</th>
+<th style="text-align: right;">Effort AI-adjusted (con riserva 15%)</th>
+<th style="text-align: right;">FTE medi su 9 mesi</th>
+<th style="text-align: right;">Token previsti (stima)</th>
+<th style="text-align: right;">Costo token stimato</th>
+<th style="text-align: right;">Overage oltre licenze incluse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Basso</td>
+<td style="text-align: right;">~369 gg-persona</td>
+<td style="text-align: right;">~424 gg-persona</td>
+<td style="text-align: right;">~2,3</td>
+<td style="text-align: right;">~730M</td>
+<td style="text-align: right;">~€2.900</td>
+<td style="text-align: right;">~€2.500</td>
+</tr>
+<tr>
+<td>Base</td>
+<td style="text-align: right;">~462 gg-persona</td>
+<td style="text-align: right;">~531 gg-persona</td>
+<td style="text-align: right;">~2,9</td>
+<td style="text-align: right;">~915M</td>
+<td style="text-align: right;">~€3.700</td>
+<td style="text-align: right;">~€3.150</td>
+</tr>
+<tr>
+<td>Alto</td>
+<td style="text-align: right;">~578 gg-persona</td>
+<td style="text-align: right;">~665 gg-persona</td>
+<td style="text-align: right;">~3,7</td>
+<td style="text-align: right;">~1,15Mld</td>
+<td style="text-align: right;">~€4.600</td>
+<td style="text-align: right;">~€3.950</td>
+</tr>
+</tbody>
+</table>
+<p><em>Metodo: tariffa Claude Sonnet (Oct 2026, GitHub Copilot AI Credits) ≈ $4/M token blended (75% input/25% output); "licenze incluse" = FTE medi × 1.900 crediti/utente/mese (piano Business) × 9 mesi × $0,01/credito. $≈€ per ordine di grandezza. Tutte le percentuali di riduzione effort e il token/gg-persona sono assunzioni interne non ancora misurate sul progetto — da validare sul campo, non sostituiscono la WBS tradizionale sopra.</em></p>
+<h2 id="business-case-aggiornato-06102026-lettura-del-file-businesscasemvpticketingmirixlsx">Business case aggiornato (06/10/2026) — lettura del file <a href="https://engit.sharepoint.com/:x:/r/sites/DeliveryFactoryA-PreSalesandOpptys/Documenti%20condivisi/PreSales/MILANO%20RISTORAZIONE/Business_Case_MVP_Ticketing_MiRi.xlsx?d=wac54b5c193334971bea8704b440b0215&amp;csf=1&amp;web=1&amp;e=fYRpi8">Business_Case_MVP_Ticketing_MiRi.xlsx</a></h2>
+<blockquote class="src-note">
+<p>Il file, modificato il giorno stesso del meeting tecnico con Adesso.it, non cambia il perimetro né i numeri aggregati della WBS (restano 13 work package, 633 gg-persona base) ma lo <strong>formalizza</strong>: aggiunge un foglio Parametri con le assunzioni esplicite di costo/prezzo, un foglio Review con 10 rilievi critici strutturati e un foglio Copertura che mappa l'MVP contro 12 requisiti dell'assessment AS-IS/TO-BE. È la prima volta che il business case riporta un prezzo indicativo, non solo un effort.</p>
+</blockquote>
+<h3 id="indicatori-economici-nuovi-prima-non-calcolati">Indicatori economici (nuovi — prima non calcolati)</h3>
+<p>Parametri dichiarati nel foglio "Parametri": costo medio team 500 €/gg-persona, margine commerciale 25% sul prezzo, riserva di progetto 15% sull'effort, 20 gg lavorative/mese per FTE, periodo ottobre 2026–giugno 2027 (9 mesi).</p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th style="text-align: right;">Effort base (gg)</th>
+<th style="text-align: right;">Effort con riserva 15% (gg)</th>
+<th style="text-align: right;">FTE medio periodo</th>
+<th style="text-align: right;">Costo team (EUR)</th>
+<th style="text-align: right;">Prezzo indicativo (EUR)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Low (-20%)</td>
+<td style="text-align: right;">~506</td>
+<td style="text-align: right;">~582</td>
+<td style="text-align: right;">~3,2</td>
+<td style="text-align: right;">~291.000</td>
+<td style="text-align: right;">~388.000</td>
+</tr>
+<tr>
+<td>Base</td>
+<td style="text-align: right;">633</td>
+<td style="text-align: right;">~728</td>
+<td style="text-align: right;">~4,0</td>
+<td style="text-align: right;">~364.000</td>
+<td style="text-align: right;">~485.000</td>
+</tr>
+<tr>
+<td>High (+25%)</td>
+<td style="text-align: right;">~791</td>
+<td style="text-align: right;">~910</td>
+<td style="text-align: right;">~5,1</td>
+<td style="text-align: right;">~455.000</td>
+<td style="text-align: right;">~607.000</td>
+</tr>
+</tbody>
+</table>
+<p><em>Verificato ricalcolando le formule del foglio (i valori cache erano assenti, file non ancora ricalcolato in Excel/LibreOffice): prezzo = costo / (1 − margine), costo = effort con riserva × 500 €/gg. Numeri coerenti con la baseline ROM già nota (506/633/791 gg pre-riserva), quindi nessuna sorpresa sull'effort — la novità è l'esplicitazione di costo e prezzo, finora assenti dal tracking.</em></p>
+<p><strong>Picco di carico ricalcolato dalla distribuzione mensile dei 13 WP (foglio "Carico mensile"):</strong> ~5,9 FTE a <strong>marzo 2027</strong> (scenario base, riserva inclusa), non ~6,5 FTE a febbraio come riportato nella baseline del 02/10. Lo scostamento è spiegabile con la sovrapposizione tra Portale/ticketing (1.6, gen-mar), Identity/onboarding (1.7, dic-feb) e API Gateway/CRM (1.8, nov-mar): il mese di picco effettivo dipende da come si distribuisce l'effort di ciascun WP nel suo intervallo, sensibile a assunzioni di dettaglio non esplicitate nel file. Da non trattare come contraddizione ma come raffinamento: la differenza (~0,6 FTE) rientra nel margine di incertezza di una stima ROM.</p>
+<h3 id="rilievi-della-review-10-già-incorporati-nel-foglio-review-del-business-case">Rilievi della review (10, già incorporati nel foglio "Review" del business case)</h3>
+<p>Priorità <strong>Alta</strong> (5 su 10 — i nodi che vanno chiusi prima di una stima vincolante):</p>
+<ol>
+<li><strong>Nessuna decisione architetturale (ADR)</strong> tra alternativa SAP-centrica e Best of Breed: l'assessment descrive entrambe (pp.20-35) ma il deck MVP non sceglie. Rischio di rework su master data, API e sizing delle integrazioni se la decisione arriva dopo l'avvio del build.</li>
+<li><strong>Scope gap tra Quick Win e trasformazione ecosistemica</strong>: il deck limita l'MVP a 5 capability di ticketing, l'assessment estende il portale a iscrizioni, pagamenti, diete, presenze e CMS (pp.21, 31). Senza una baseline di scope con incluso/escluso esplicito, il rischio è che budget e aspettative del cliente includano implicitamente l'intera roadmap pluriennale.</li>
+<li><strong>Ticketing non ancora definito come servizio operativo</strong>: SLA, notifiche, allegati, categorie/priorità, spam, reporting non sono specificati nel deck. UAT e go-live rischiano di scoprire requisiti di processo non stimati.</li>
+<li><strong>Identità-Dynamics come nodo di percorso critico</strong>: matching, consenso, account linking, duplicati non hanno ancora risposta. Confermato come il rischio tecnico più alto, coerente con quanto già tracciato (R3 nella sezione rischi sotto).</li>
+<li><strong>Dipendenze esterne senza owner/data/fallback</strong>: federazione SPID/CIE, CRM, SAP/reporting sono citate come dipendenze ma senza dependency matrix formalizzata.</li>
+</ol>
+<p>Priorità <strong>Media</strong> (4): piattaforma Gateway/Event Bus proposta senza sizing né modello operativo; governance tripartita e modello economico (RACI, IP, change control) ancora da formalizzare; timeline coerente con la scadenza licenze ma senza buffer/rollback verificati; NFR (accessibilità, privacy, audit) citati ma senza criteri di accettazione misurabili.</p>
+<p>Priorità <strong>Bassa</strong> (1): processi strategici (assenze/RID/ISEE, valutazioni commissari) dichiarati manuali o non analizzati — da trattare come discovery futura, non da sottostimare come "già coperti".</p>
+<h3 id="matrice-di-copertura-12-requisiti-as-isto-be-vs-perimetro-mvp">Matrice di copertura (12 requisiti AS-IS/TO-BE vs perimetro MVP)</h3>
+<p>Nessuno dei 12 requisiti strategici dell'assessment risulta "Completo" nel perimetro MVP: <strong>9 Parziale</strong>, <strong>1 Fuori perimetro</strong> (vista integrata dei servizi attivi — rette/pagamenti/diete/presenze, rimandata a tranche future), <strong>1 Da decidere</strong> (modello dati/master data condiviso, dipende dall'ADR SAP-centrica vs Best of Breed ancora non presa), <strong>1 Parziale</strong> sul rilascio prima della scadenza licenze (percorso critico, buffer e proroga non contrattualizzati). Lettura sintetica: l'MVP è un <strong>passo coerente ma circoscritto</strong> verso la trasformazione descritta nell'assessment, non una sua realizzazione anticipata — va comunicato così ad Adesso.it e al cliente per evitare un disallineamento di aspettative sul perimetro.</p>
+<h3 id="cross-check-indipendente-metodo-fpengenius-skill-impact-engenius">Cross-check indipendente (metodo FP/ENGenius, skill <code>impact</code> + <code>engenius</code>)</h3>
+<p>Il cross-check FP già realizzato il 05/10 (44 FP ≈ 44 gg-persona sulle 5 capability core: profilo utente, ticket, propagazione CRM) resta valido e non richiede revisione: il business case aggiornato non cambia le capability MVP, solo la loro presentazione economica. Applicando la stessa logica di scoring a complessità usata nel planner WBS di ENGenius (fattori: complessità funzionale/tecnica/integrazione/dati/rischio, scala XS→XL), il work package più esposto a deriva di stima resta <strong>1.8 "API Gateway, bus e listener CRM"</strong> (96 gg base): alta complessità di integrazione (identity-to-CRM, retry/idempotenza, DLQ) e rischio per requisiti non ancora chiusi — classificabile <strong>XL</strong> con la tabella di conversione ENGenius (10-20 gg per singolo macro-task, qui aggregato su più sotto-attività), a conferma che è il WP con maggior necessità di una vertical slice di prova (vedi R3/D10 sotto) prima di congelare il prezzo.</p>
 <h2 id="preparazione-meeting-con-adessoit-06102026">Preparazione meeting con Adesso.it (06/10/2026)</h2>
 <blockquote class="src-note">
-<p>Contenuto preparato come primo task assegnato sull'iniziativa, in vista del meeting tecnico con Adesso.it del 06/10/2026. Base: checklist <code>TODO_Meeting_Tecnico_Adesso_MiRi.md</code>, business case WBS e i due PDF di analisi As-Is/To-Be e ticketing. Da validare/integrare durante e dopo il meeting.</p>
+<p>Contenuto preparato come primo task assegnato sull'iniziativa, in vista del meeting tecnico con Adesso.it del 06/10/2026. Base: checklist <a href="https://engit.sharepoint.com/:t:/r/sites/DeliveryFactoryA-PreSalesandOpptys/Documenti%20condivisi/PreSales/MILANO%20RISTORAZIONE/TODO_Meeting_Tecnico_Adesso_MiRi.md?d=we1db0013e35141869995806b274c8a57&amp;csf=1&amp;web=1&amp;e=RuONok">TODO_Meeting_Tecnico_Adesso_MiRi.md</a>, business case WBS e i due PDF di analisi As-Is/To-Be e ticketing. Da validare/integrare durante e dopo il meeting.</p>
 <p>ID stabili per riferimento in sede di meeting e nel verbale che seguirà (convenzione <code>D</code>=domanda, <code>OP</code>=open point, <code>R</code>=rischio): ogni voce sotto può essere citata per ID durante la discussione invece di doverla ridescrivere.</p>
 </blockquote>
 <h3 id="domande-per-adessoit">Domande per Adesso.it</h3>
 <ol>
-<li><strong>D1</strong> — Chi è l'account lead congiunto lato Adesso.it e chi ha mandato a decidere in sessione (per evitare di tornare a chiedere mandato dopo il meeting)?</li>
-<li><strong>D2</strong> — Come vedete la narrativa verso Milano Ristorazione: Adesso.it presidio relazione/coordinamento, ENG guida architettura/integrazioni/delivery — confermate questo split o lo intendete diversamente? <em>(collegata a OP-ORG-1/nodo critico sotto)</em></li>
-<li><strong>D3</strong> — Prime contractor: chi fattura al cliente e come si regola la subfornitura ENG (perimetro economico, non solo tecnico)?</li>
+<li><strong>D1</strong> — Chi è il referente unico condiviso lato Adesso.it e chi ha mandato a decidere in sessione (per evitare di tornare a chiedere mandato dopo il meeting)?</li>
+<li><strong>D2</strong> — Come vedete l'impostazione da comunicare a Milano Ristorazione: Adesso.it presidio relazione/coordinamento, ENG guida architettura/integrazioni/delivery — confermate questa suddivisione o la intendete diversamente? <em>(collegata a OP-ORG-1/nodo critico sotto)</em></li>
+<li><strong>D3</strong> — Capofila contrattuale: chi fattura al cliente e come si regola la subfornitura ENG (perimetro economico, non solo tecnico)?</li>
 <li><strong>D4</strong> — Come gestiamo insieme le change request dopo la baseline — c'è già un processo Adesso.it-cliente in cui ENG si deve inserire, o lo definiamo da zero?</li>
 <li><strong>D5</strong> — Chi è owner degli artefatti (WBS, documentazione architetturale, codice) e con quale licenza/proprietà verso il cliente?</li>
-<li><strong>D6</strong> — È previsto supporto post go-live (hypercare, L2/L3)? Con quale perimetro e per quanto tempo, e chi lo presidia?</li>
-<li><strong>D7</strong> — Quali materiali (deck, WBS, stima) possiamo condividere direttamente con Milano Ristorazione, e con quale branding (ENG, Adesso.it, congiunto)?</li>
+<li><strong>D6</strong> — È prevista assistenza post avvio (L2/L3)? Con quale perimetro e per quanto tempo, e chi lo presidia?</li>
+<li><strong>D7</strong> — Quali materiali (presentazione, WBS, stima) possiamo condividere direttamente con Milano Ristorazione, e con quale branding (ENG, Adesso.it, congiunto)?</li>
 <li><strong>D8</strong> — Sul CRM Dynamics: chi ha accesso/ownership dell'ambiente e dei dati, Adesso.it o il cliente? ENG avrà un ambiente di test dedicato?</li>
 <li><strong>D9</strong> — Sulla scadenza licenze (vincolo citato nella checklist): qual è la data esatta e quali sono i margini di proroga già negoziati o negoziabili? Se la risposta è vaga, è un segnale che il gate "non impegnare la data di go-live" (vedi R2) va mantenuto esplicitamente in chiusura meeting.</li>
 <li><strong>D10</strong> — È disponibile o pianificabile un test pilota sul collegamento identità-Dynamics come prova di fattibilità separata, prima di una stima vincolante?</li>
@@ -134,19 +362,19 @@
 <h3 id="punti-aperti-da-validare-per-area">Punti aperti da validare (per area)</h3>
 <p><strong>Funzionale</strong>
 - <strong>OP-FUN-1</strong> — Conferma perimetro MVP (login/registrazione, lista/dettaglio ticket, apertura/risposta, stato ticket, propagazione profilo a Dynamics) ed esclusioni esplicite (rette, iscrizioni, presenze, diete, pagamenti, CMS, migrazione/decommissioning).
-- <strong>OP-FUN-2</strong> — Service blueprint minimo: journey famiglie, scuole, operatori CRM — non ancora validato con il cliente.</p>
+- <strong>OP-FUN-2</strong> — Mappa del servizio minima: journey famiglie, scuole, operatori CRM — non ancora validato con il cliente.</p>
 <p><strong>Tecnica / Integrazioni</strong>
 - <strong>OP-TEC-1</strong> — Collegamento identità-Dynamics: regole di matching, consenso, account linking, gestione duplicati, riconciliazione manuale — nessuna risposta ancora. <em>(nodo a effort/calendario più alto, vedi R3)</em>
 - <strong>OP-TEC-2</strong> — Sistemi sorgente, API, limiti di chiamata, ambienti/dati di test per CRM, SPID/CIE, identità B2C, API Gateway/event bus.
 - <strong>OP-TEC-3</strong> — NFR da validare: sicurezza, privacy/DPIA, accessibilità, performance, disponibilità, audit, retention, notifiche, SLA, allegati, reporting, supporto.</p>
 <p><strong>Organizzativa / Governance</strong>
-- <strong>OP-ORG-1</strong> — RACI formale (proposta a 6 livelli già abbozzata, da far firmare, non solo discutere). <em>(collegata a D2 e al nodo critico di responsabilità sotto)</em>
-- <strong>OP-ORG-2</strong> — Composizione nucleo di delivery per fase (seniority, mix interno/partner, backup) — non definibile finché dipendenze e requisiti non sono chiusi.
+- <strong>OP-ORG-1</strong> — RACI formale (proposta a 6 livelli già abbozzata). <strong>Punto tenuto aperto</strong>: non è garantito avere una bozza compilabile e condivisibile in tempo per il meeting del 06/10 — se pronta la si porta come bozza di lavoro, altrimenti si discute il modello a voce e si formalizza come follow-up post-meeting. <em>(collegata a D2 e al nodo critico di responsabilità sotto)</em>
+- <strong>OP-ORG-2</strong> — Composizione nucleo di delivery per fase (seniority, mix interno/partner, riserve/sostituti) — non definibile finché dipendenze e requisiti non sono chiusi.
 - <strong>OP-ORG-3</strong> — Modello di escalation e gestione change request post-baseline.</p>
 <p><strong>Dati / Volumi</strong>
-- <strong>OP-DAT-1</strong> — Nessuna baseline affidabile di utenti, ticket, concorrenza, allegati: servono 3 profili (normale/picco/stress) da costruire nel workshop, non numeri "a sensazione".</p>
+- <strong>OP-DAT-1</strong> — Nessuna baseline affidabile di utenti, ticket, concorrenza, allegati: servono 3 profili (normale/picco/stress) da costruire in un incontro di lavoro dedicato, non numeri "a sensazione".</p>
 <p><strong>Commerciale</strong>
-- <strong>OP-COM-1</strong> — Prime contractor e perimetro economico ENG vs Adesso.it.
+- <strong>OP-COM-1</strong> — Capofila contrattuale e perimetro economico ENG vs Adesso.it.
 - <strong>OP-COM-2</strong> — Gate esplicito: non impegnare prezzo/data di go-live finché volumi, NFR, collegamento identità-Dynamics, disponibilità integrazioni e proroga licenze non sono verificati.</p>
 <h3 id="ambiti-di-responsabilità-da-chiarire">Ambiti di responsabilità da chiarire</h3>
 <table>
@@ -197,11 +425,11 @@
 </tr>
 </tbody>
 </table>
-<p>Nodo critico da chiarire in meeting (<strong>OP-ORG-1</strong>): dove finisce il "coordinamento" di Adesso.it e dove inizia la "guida tecnica" di ENG su architettura/integrazioni — è l'area con più rischio di sovrapposizione operativa. Controfattuale da verificare: se Adesso.it intende mantenere anche le decisioni architetturali (non solo la relazione), lo split di scope qui sotto va rivisto prima, non dopo, la firma della RACI.</p>
+<p>Nodo critico da chiarire in meeting (<strong>OP-ORG-1</strong>): dove finisce il "coordinamento" di Adesso.it e dove inizia la "guida tecnica" di ENG su architettura/integrazioni — è l'area con più rischio di sovrapposizione operativa. Controfattuale da verificare: se Adesso.it intende mantenere anche le decisioni architetturali (non solo la relazione), la suddivisione di scope qui sotto va rivista prima, non dopo, la firma della RACI.</p>
 <h3 id="ipotesi-di-nostro-scope-eng">Ipotesi di nostro scope (ENG)</h3>
 <ul>
-<li><strong>Dentro perimetro</strong>: solution architecture, integrazioni (API Gateway/event bus, listener CRM), collegamento identità-Dynamics, configurazione Dynamics lato integrazione, sviluppo portale/ticketing, test integrati, cloud/DevOps, sicurezza tecnica, supporto a UAT/cutover.</li>
-<li><strong>Da negoziare/chiarire</strong>: presenza ENG nei tavoli diretti col cliente (oggi presidiati da Adesso.it), responsabilità su UX/UI e accessibilità, perimetro esatto del supporto post go-live (L2/L3 sì, L1 no — da confermare).</li>
+<li><strong>Dentro perimetro</strong>: solution architecture, integrazioni (API Gateway/event bus, listener CRM), collegamento identità-Dynamics, configurazione Dynamics lato integrazione, sviluppo portale/ticketing, test integrati, cloud/DevOps, sicurezza tecnica, supporto a UAT/avvio in produzione.</li>
+<li><strong>Da negoziare/chiarire</strong>: presenza ENG nei tavoli diretti col cliente (oggi presidiati da Adesso.it), responsabilità su UX/UI e accessibilità, perimetro esatto dell'assistenza post avvio (L2/L3 sì, L1 no — da confermare).</li>
 <li><strong>Fuori perimetro (presunto)</strong>: relazione commerciale/contrattuale con Milano Ristorazione (in capo ad Adesso.it), funzionalità evolutive oltre l'MVP (rette, pagamenti, CMS — da stimare separatamente se richieste in futuro).</li>
 </ul>
 <h3 id="bozza-stima-effort-elapsed-fte">Bozza stima effort / elapsed / FTE</h3>
@@ -237,8 +465,8 @@
 </tbody>
 </table>
 <ul>
-<li><strong>Elapsed</strong>: baseline ottobre 2026 → go-live giugno 2027 (9 mesi), picco ~6,5 FTE a febbraio 2027.</li>
-<li><strong>Profili/competenze richieste</strong> (non tutti full-time, da attivare per fase): PM/Delivery Lead, Product Owner/Business Analyst, Solution Architect/Integration Lead, UX/UI con competenza accessibilità, team full-stack portale/ticketing, Identity Engineer (SPID/CIE, B2C), Dynamics Engineer, Cloud/DevOps Engineer, QA/Test Lead, Security/Privacy specialist, Service/Operations lead per hypercare.</li>
+<li><strong>Elapsed</strong>: baseline ottobre 2026 → go-live giugno 2027 (9 mesi), picco ~5,9 FTE a marzo 2027 (ricalcolo 06/10, vedi sopra).</li>
+<li><strong>Profili/competenze richieste</strong> (non tutti full-time, da attivare per fase): PM/Delivery Lead, Product Owner/Business Analyst, Solution Architect/Integration Lead, UX/UI con competenza accessibilità, team full-stack portale/ticketing, Identity Engineer (SPID/CIE, B2C), Dynamics Engineer, Cloud/DevOps Engineer, QA/Test Lead, Security/Privacy specialist, Service/Operations lead per assistenza post avvio.</li>
 <li><strong>Dipendenze/assunzioni da validare prima che la stima diventi vincolante</strong>: disponibilità tempestiva di ambienti/API/referenti cliente, nessuna migrazione dati, perimetro Dynamics limitato al flusso MVP, dati di volume reali (oggi assenti), esito test pilota sul collegamento identità-Dynamics.</li>
 </ul>
 <h3 id="rischi-e-assunzioni">Rischi e assunzioni</h3>
@@ -256,7 +484,7 @@
 <td><strong>R1</strong></td>
 <td>Sovrapposizione operativa: confine sfumato tra "coordinamento" (Adesso.it) e "guida tecnica" (ENG) su architettura/integrazioni (OP-ORG-1)</td>
 <td>Decisioni prese due volte, o da nessuno, a metà progetto</td>
-<td>RACI firmata <strong>prima</strong> del meeting (bozza, non discussione a voce) — vedi D2</td>
+<td>RACI in bozza se pronta prima del meeting, altrimenti modello discusso a voce e formalizzato come follow-up — vedi D2</td>
 </tr>
 <tr>
 <td><strong>R2</strong></td>
@@ -272,7 +500,7 @@
 </tr>
 <tr>
 <td><strong>R4</strong></td>
-<td>Prime contractor e perimetro economico non ancora chiariti (OP-COM-1)</td>
+<td>Capofila contrattuale e perimetro economico non ancora chiariti (OP-COM-1)</td>
 <td>Blocca la condivisione di stime con il cliente finale</td>
 <td>Chiudere D3 in meeting, non rimandarlo a un follow-up separato</td>
 </tr>
@@ -286,21 +514,22 @@
 <td><strong>R6 (assunzione)</strong></td>
 <td>Disponibilità di ambienti/dati di test (CRM, SPID/CIE, identità B2C, API Gateway) nei tempi del piano</td>
 <td>Slittamento a cascata su sviluppo e test integrati</td>
-<td>Dependency matrix con owner e data esplicita (azione da chiudere in meeting, non dopo)</td>
+<td>Tabella delle dipendenze con owner e data esplicita (azione da chiudere in meeting, non dopo)</td>
 </tr>
 </tbody>
 </table>
-<h2 id="idee-proposte-dallagente">Idee proposte dall'agente</h2>
+<h2 id="idee-proposte-dallagente-decisioni-interne-eng-pre-meeting">Idee proposte dall'agente — decisioni interne ENG (pre-meeting)</h2>
 <blockquote class="src-note">
-<p>Contenuto generato da questo agente (non dal cliente/partner), da validare prima di presentarlo ad Adesso.it/Milano Ristorazione. Approccio ispirato ai planner ENGenius (ANALYSIS, FP_SIZING, WBS, ACTIVITY).</p>
+<p>Contenuto generato da questo agente, validato internamente il 05/10/2026. Nessun documento aggiuntivo: tutte le decisioni restano in questo stesso file.</p>
 </blockquote>
 <ol>
-<li><strong>Raffinare la stima ROM con Function Point / SNAP sizing</strong>: la WBS attuale è per work package; affiancarla con un sizing a Function Point (planner ENGenius <code>FP_SIZING</code>, eventualmente supportato dal tool <code>mcp-fp-snap-server</code>) darebbe una seconda misura indipendente da confrontare con la stima a gg-persona.</li>
-<li><strong>Test pilota sul collegamento identità-Dynamics come prova di fattibilità anticipata</strong>: proporla come primo "sprint 0" a pagamento separato per validare il collegamento più critico (identità → Dynamics) prima di impegnarsi sulla stima completa.</li>
-<li><strong>RACI formalizzata prima del meeting, non durante</strong>: portare in meeting una bozza di RACI già compilata invece di limitarsi a discuterne il modello.</li>
-<li><strong>Tre profili di volume (normale/picco/stress) come allegato tecnico separato</strong>: template già strutturato da far compilare a Milano Ristorazione nel workshop.</li>
-<li><strong>Dependency matrix con data di scadenza esplicita per ciascuna dipendenza</strong>: collegata visibilmente al gate "non impegnare prezzo/data".</li>
-<li><strong>Piano di escalation change request già abbozzato in fase di proposta</strong>: anticipare come verranno gestite le change request post-baseline, per evitare conflitti a metà progetto.</li>
+<li><strong>FP sizing</strong> — Eseguito (vedi cross-check sopra, 44 FP / ~44 gg-persona sulle capability core), integrato nella sezione "Stato" invece di un documento a parte. Nessuna ulteriore produzione documentale prevista.</li>
+<li><strong>Test pilota identità-Dynamics</strong> — <strong>Non a pagamento separato</strong>: lo facciamo come <strong>investimento ENG</strong>, per avere confidenza su una stima realistica prima dell'impegno definitivo (non lo offriamo come voce fatturabile a sé).</li>
+<li><strong>RACI</strong> — <strong>Punto tenuto aperto</strong>: non abbiamo certezza di riuscire a preparare una bozza condivisibile entro il meeting del 06/10; si valuta avvicinandosi alla data (vedi OP-ORG-1/R1).</li>
+<li><strong>Tre profili di volume (normale/picco/stress)</strong> — Prepariamo una bozza di template e la <strong>proponiamo ad Adesso.it durante il meeting</strong> (da far compilare insieme a Milano Ristorazione in un secondo momento).</li>
+<li><strong>Tabella delle dipendenze con data di scadenza</strong> — Confermata, procede come proposto.</li>
+<li><strong>Piano di escalation change request</strong> — Prepariamo una <strong>bozza di proposta ENG</strong>, da portare e discutere al meeting (non già concordata/definitiva).</li>
+<li><strong>ADR architetturale come precondizione commerciale</strong> — Alla luce della review del business case (rilievo Alta priorità su SAP-centrica vs Best of Breed), proponiamo di portare al meeting odierno una richiesta esplicita: <strong>nessun prezzo impegnativo finché l'ADR non è firmato</strong>, anche se questo significa spostare la baseline economica definitiva oltre il 06/10. È coerente con il gate OP-COM-2 già tracciato, ma lo rende più stringente: oggi il rischio di scope/architettura è documentato in un foglio formale (Copertura), non solo in una nota interna.</li>
 </ol>
       </div>
     </div>
@@ -310,7 +539,7 @@
 <footer>
   <div class="wrap">
     <div><strong>PreSales Opportunity</strong> — generata da <code>teams-channel-agent</code>, dati da DocMind (progetto PreSales).</div>
-    <div>Ultima rigenerazione pagina: 5 ott 2026 · 15:49 UTC</div>
+    <div>Ultima rigenerazione pagina: 6 ott 2026 · 11:59 UTC</div>
   </div>
 </footer>
 
@@ -323,6 +552,12 @@ function onScroll(){
 }
 document.addEventListener('scroll', onScroll, {passive:true});
 onScroll();
+
+// reveal on scroll
+const ioReveal = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); ioReveal.unobserve(e.target);} });
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>ioReveal.observe(el));
 
 // evidenzia la voce di TOC attiva durante lo scroll
 const headings = Array.from(document.querySelectorAll('.detail-content [id]'));
