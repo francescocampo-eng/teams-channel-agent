@@ -12,6 +12,9 @@ cp docs/ciro_persona.md .atlas/ciro_persona.md
 mkdir -p .atlas/opportunita
 cp site/data/raw/*.md .atlas/opportunita/
 
+python3 scripts/render_stato_opportunita.py
+
 echo "Sincronizzati in .atlas/:"
 echo "  - ciro_persona.md"
 echo "  - opportunita/*.md ($(ls site/data/raw/*.md | wc -l) file)"
+echo "  - stato_opportunita.md (snapshot sola lettura da data/presales_milestones.json)"

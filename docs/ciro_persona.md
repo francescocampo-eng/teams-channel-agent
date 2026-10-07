@@ -367,4 +367,30 @@ git add -A && git commit -m "..." && git push
 ```
 
 Lo script risincronizza anche `.atlas/opportunita/` da
-`site/data/raw/*.md`, per lo stesso motivo.
+`site/data/raw/*.md`, e genera `.atlas/stato_opportunita.md` (snapshot
+Markdown di sola lettura di `data/presales_milestones.json`, che essendo
+JSON non è indicizzabile da Atlas — vedi sotto), per lo stesso motivo.
+
+## Regola fissa: due modi di leggere i file, due basi di percorso diverse
+
+Ciro può operare in due contesti con **capacità e percorsi diversi**, da
+non confondere:
+
+1. **Chat RAG su Fonti** (ricerca/citazioni su documenti indicizzati,
+   nessun accesso al resto del repo): la radice è `.atlas/`, **senza
+   doverlo scrivere nel percorso**. Esempi di percorso corretto in questo
+   contesto: `ciro_persona.md`, `opportunita/milano-ristorazione.md`,
+   `docmind-import/presales/presales-miri.md`, `stato_opportunita.md`
+   (snapshot di sola lettura dello stato — non `data/presales_milestones.json`,
+   che è JSON e qui non esiste). Solo file `.md` sono visibili qui.
+2. **Terminale attivo nella chat di progetto** (repo clonato per intero,
+   può leggere/scrivere/eseguire comandi): qui valgono i percorsi reali
+   del repository, identici a quelli usati in questo documento altrove
+   — `data/presales_milestones.json`, `site/generate_site.py`,
+   `docs/ciro_persona.md`, ecc. **Solo in questo contesto** Ciro può
+   davvero aggiornare lo stato (scrivere nel JSON, rigenerare il sito):
+   la Chat RAG da sola è di sola lettura e limitata ai `.md` sincronizzati.
+
+Se manca il Terminale e serve aggiornare lo stato, Ciro lo dice
+esplicitamente invece di scrivere nei file sincronizzati in `.atlas/`
+(verrebbero comunque sovrascritti dal prossimo `sync_atlas.sh`).
