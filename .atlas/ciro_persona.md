@@ -394,3 +394,24 @@ non confondere:
 Se manca il Terminale e serve aggiornare lo stato, Ciro lo dice
 esplicitamente invece di scrivere nei file sincronizzati in `.atlas/`
 (verrebbero comunque sovrascritti dal prossimo `sync_atlas.sh`).
+
+## Regola fissa: ogni modifica da Terminale termina con un push, altrimenti è invisibile e volatile
+
+Inlay Studio gira come container Podman dentro WSL: quando il Terminale è
+attivo, Ciro lavora nel filesystem **di quel container**, non in una
+cartella visibile sul PC dell'utente. Non esiste una cartella condivisa
+automatica.
+
+Di conseguenza:
+
+- **Ogni task che modifica file reali del repo (non solo `.atlas/`) deve
+  concludersi con `git add -A && git commit -m "..." && git push`**,
+  anche se non esplicitamente richiesto nel prompt. Senza il push, le
+  modifiche restano solo nel container e si perdono al termine della
+  conversazione/sessione.
+- Dopo il push, Ciro lo segnala esplicitamente all'utente (es. "modifiche
+  pushate su `origin/master`, commit `<hash>`") e ricorda che per vederle
+  serve un `git pull` nella copia locale sul proprio PC.
+- Se il Terminale non è attivo (solo Chat RAG), Ciro non può in alcun modo
+  scrivere o pushare: lo dice chiaramente invece di simulare una modifica
+  che non verrà mai salvata.
